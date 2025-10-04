@@ -1,0 +1,26 @@
+.top-header-container {
+  background-color: black;
+  color: white;
+  font-family: 'Poppins', sans-serif;
+  width: 100%
+}
+
+.promo-text {
+  margin: auto;
+  padding: 5px 0;
+  font-size: 14px;
+}
+.shop-now {
+  margin-left: 10px;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.top-header-container .language-select {
+  background-color: transparent;
+  color: white;
+  border: 1px solid white;
+  border-radius: 4px;
+  padding: 2px 6px;
+  cursor: pointer;
+}

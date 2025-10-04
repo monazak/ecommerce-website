@@ -1,0 +1,32 @@
+{
+  "slides": [
+    {
+      "src": "/slidesImages/airpods.webp",
+      "alt": "Image 1 for carousel",
+      "label": "iPhone 14 Series",
+      "subtitle": "Up to 10% off Voucher",
+      "icon": "fa-brands fa-apple"
+    },
+    {
+      "src": "/slidesImages/applewatch.jpg",
+      "alt": "Image 2 for carousel",
+      "label": "Apple Watch Series",
+      "subtitle": "Special Deals Today",
+      "icon": "fa-brands fa-apple"
+    },
+    {
+      "src": "/slidesImages/macbook.jpg",
+      "alt": "Image 3 for carousel",
+      "label": "MacBook Pro",
+      "subtitle": "Save up to $200",
+      "icon": "fa-brands fa-apple"
+    },
+    {
+      "src": "/slidesImages/iphone.png",
+      "alt": "Image 4 for carousel",
+      "label": "iPhone 14 Pro",
+      "subtitle": "Exclusive Launch Offer",
+      "icon": "fa-brands fa-apple"
+    }
+  ]
+}
