@@ -1,11 +1,22 @@
 import React from 'react'
 import CategoryWithSlider from '../components/CategoryWithSlider'
-import Sidebar from '../components/SideBar'
-
+import SectionHeader from '../components/SectionHeader'
+import Countdown from '../components/Countdown'
+import Arrows from '../components/Arrows'
+import Section from '../components/Section'
+import {sections} from '../components/data/sections.json'
 function Home({isSidebarOpen, closeSidebar}) {
   return (
+<>
     <CategoryWithSlider isSidebarOpen={isSidebarOpen} closeSidebar={closeSidebar} />
+    <Section section={sections[0]} />
+    <Section section={sections[1]} />
+    <Section section={sections[2]} />
+    <Section section={sections[3]} />
+    <Section section={sections[4]} />
 
+
+    </>
   )
 }
 

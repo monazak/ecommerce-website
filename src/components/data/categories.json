@@ -1,0 +1,34 @@
+{
+  "categories": [
+    {
+      "id": 1,
+      "name": "Phone",
+      "icon": "fa-solid fa-mobile-screen"
+    },
+    {
+      "id": 2,
+      "name": "Computers",
+      "icon": "fa-solid fa-laptop"
+    },
+    {
+      "id": 3,
+      "name": "Smart Watch",
+      "icon": "fa-solid fa-watch-smart"
+    },
+    {
+      "id": 4,
+      "name": "Camera",
+      "icon": "fa-solid fa-camera"
+    },
+    {
+      "id": 5,
+      "name": "Headphones",
+      "icon": "fa-solid fa-headphones"
+    },
+    {
+      "id": 6,
+      "name": "Gaming",
+      "icon": "fa-solid fa-gamepad"
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "features": [
+    {
+      "id": 1,
+      "name": "Fast Delivery",
+      "icon": "fa-solid fa-truck-fast",
+      "details": "Get your products delivered in less than 24 hours."
+    },
+    {
+      "id": 2,
+      "name": "Secure Payment",
+      "icon": "fa-solid fa-lock",
+      "details": "All transactions are 100% secure and encrypted."
+    },
+    {
+      "id": 3,
+      "name": "24/7 Support",
+      "icon": "fa-solid fa-headset",
+      "details": "Our support team is available around the clock."
+    }
+  ]
+}

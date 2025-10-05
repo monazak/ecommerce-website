@@ -1,0 +1,84 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "Wireless Bluetooth Headphones Wireless Bluetooth Headphones",
+      "image": "/slidesImages/macbook.jpg",
+      "price": 59.99,
+      "oldPrice": 89.99,
+      "saleRatio": 33,
+      "rating": 4.5,
+      "reviews": 125
+    },
+    {
+      "id": 2,
+      "name": "Smart Watch Series 7",
+      "image": "/slidesImages/iphone.png",
+      "price": 199.99,
+      "oldPrice": 249.99,
+      "saleRatio": 20,
+      "rating": 4.8,
+      "reviews": 342
+    },
+    {
+      "id": 3,
+      "name": "DSLR Camera Lens 50mm",
+      "image": "/slidesImages/macbook.jpg",
+      "price": 99.99,
+      "oldPrice": 129.99,
+      "saleRatio": 23,
+      "rating": 4.3,
+      "reviews": 86
+    },
+    {
+      "id": 4,
+      "name": "Gaming Mechanical Keyboard",
+      "image": "/products/airpods.webp",
+      "price": 89.99,
+      "oldPrice": 129.99,
+      "saleRatio": 30,
+      "rating": 4.7,
+      "reviews": 220
+    },
+    {
+      "id": 5,
+      "name": "Portable Bluetooth Speaker",
+      "image": "/products/speaker.jpg",
+      "price": 49.99,
+      "oldPrice": 69.99,
+      "saleRatio": 29,
+      "rating": 4.6,
+      "reviews": 189
+    },
+    {
+      "id": 6,
+      "name": "4K Action Camera",
+      "image": "/products/action-camera.jpg",
+      "price": 129.99,
+      "oldPrice": 179.99,
+      "saleRatio": 28,
+      "rating": 4.4,
+      "reviews": 105
+    },
+    {
+      "id": 7,
+      "name": "Wireless Mouse",
+      "image": "/products/mouse.jpg",
+      "price": 25.99,
+      "oldPrice": 39.99,
+      "saleRatio": 35,
+      "rating": 4.2,
+      "reviews": 64
+    },
+    {
+      "id": 8,
+      "name": "Smartphone Tripod Stand",
+      "image": "/products/tripod.jpg",
+      "price": 39.99,
+      "oldPrice": 59.99,
+      "saleRatio": 33,
+      "rating": 4.5,
+      "reviews": 78
+    }
+  ]
+}
