@@ -6,16 +6,16 @@ function ProductCard({
   name,
   price,
   oldPrice,
-  rating = 0, 
-  viewers = 0,
-  saleRatio=7,
+  rating , 
+  viewers ,
+  saleRatio,
 })
  {
 const [expanded, setExpanded] = useState(false);
   return (
-    <div className="product-card  bg-white shadow-md rounded overflow-hidden relative group">
+    <div className="product-card w-80 h-100  bg-white shadow-md rounded overflow-hidden relative group">
  
-      <div className="relative w-80 h-80 ">
+      <div className="relative w-full h-80">
         {saleRatio && (
           <div className="absolute top-2 left-2 bg-red-500 text-white text-xs px-2 py-1 rounded z-10">
             -{saleRatio}%

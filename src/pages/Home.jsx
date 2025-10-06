@@ -4,7 +4,7 @@ import SectionHeader from '../components/SectionHeader'
 import Countdown from '../components/Countdown'
 import Arrows from '../components/Arrows'
 import Section from '../components/Section'
-import {sections} from '../components/data/sections.json'
+import {sections} from '../components/data/sections.js'
 function Home({isSidebarOpen, closeSidebar}) {
   return (
 <>

@@ -5,15 +5,15 @@ function TopHeader() {
   const [language, setLanguage] = useState('English');
 
   return (
-    <div className="top-header-container flex flex-row justify-between items-center px-4 py-2">
+    <div className="top-header-container flex flex-row justify-between items-center px-4 py-2 mb-4  md:px-[4%] lg:px-[7%]">
       
       <p className=" md:text-center promo-text">
         Summer Sale For All Swim Suits And Free Express Delivery - OFF 50%! 
-        <a href='/' className="shop-now">Shop Now</a>
+        <a href='/' className="shop-now">ShopNow</a>
       </p>
 
       <select
-        className="ml-2 md:mt-0 self-center md:self-auto language-select"
+        className="ml-2 md:mt-0 self-center md:self-auto language-select "
         id="language-selector"
         value={language}
         onChange={(e) => setLanguage(e.target.value)}

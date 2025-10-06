@@ -1,0 +1,58 @@
+{
+  "footerData": [
+    {
+      "title": "Subscribe",
+      "type": "subscribe",
+      "content": {
+        "logo": "Exclusive",
+        "text": "Get updates and latest offers",
+        "placeholder": "Enter your email"
+      }
+    },
+    {
+      "title": "Support",
+      "type": "text",
+      "content": [
+        "123 Street Name, City",
+        "exclusive@gmail.com",
+        "+88015-8888-9999"
+      ]
+    },
+    {
+      "title": "Account",
+      "type": "links",
+      "content": ["My Account", "Login / Register", "Cart", "Wishlist", "Shop"]
+    },
+    {
+      "title": "Quick Link",
+      "type": "links",
+      "content": ["Privacy Policy", "Terms of Use", "FAQ", "Contact"]
+    },
+    {
+      "title": "Download App",
+      "type": "app",
+      "content": {
+        "promoText": "Save $3 with App New User Only",
+        "qrSrc": "/qr.png",
+        "stores": [
+          {
+            "name": "Google Play",
+            "icon": "fab fa-google-play",
+            "topText": "GET IT ON"
+          },
+          {
+            "name": "App Store",
+            "icon": "fab fa-apple",
+            "topText": "Download on"
+          }
+        ],
+        "socialIcons": [
+          "fab fa-facebook-f",
+          "fas fa-times",
+          "fab fa-instagram",
+          "fab fa-twitter"
+        ]
+      }
+    }
+  ]
+}

@@ -2,7 +2,7 @@
   "products": [
     {
       "id": 1,
-      "name": "Wireless Bluetooth Headphones Wireless Bluetooth Headphones",
+      "name": "Wireless Bluetooth Headphones",
       "image": "/slidesImages/macbook.jpg",
       "price": 59.99,
       "oldPrice": 89.99,
@@ -79,6 +79,46 @@
       "saleRatio": 33,
       "rating": 4.5,
       "reviews": 78
+    },
+    {
+      "id": 9,
+      "name": "USB-C Charging Cable",
+      "image": "/products/usb-c-cable.jpg",
+      "price": 12.99,
+      "rating": 4.3,
+      "reviews": 250
+    },
+    {
+      "id": 10,
+      "name": "Ergonomic Office Chair",
+      "image": "/products/office-chair.jpg",
+      "price": 199.99,
+      "rating": 4.7,
+      "reviews": 180
+    },
+    {
+      "id": 11,
+      "name": "27-inch 4K Monitor",
+      "image": "/products/monitor.jpg",
+      "price": 349.99,
+      "rating": 4.6,
+      "reviews": 220
+    },
+    {
+      "id": 12,
+      "name": "27-inch 4K Monitor",
+      "image": "/products/monitor.jpg",
+      "price": 349.99,
+      "rating": 4.6,
+      "reviews": 220      
+    },
+        {
+      "id": 13,
+      "name": "27-inch 4K Monitor",
+      "image": "/products/monitor.jpg",
+      "price": 349.99,
+      "rating": 4.6,
+      "reviews": 220      
     }
   ]
 }
