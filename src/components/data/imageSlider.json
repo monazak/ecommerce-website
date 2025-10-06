@@ -1,32 +1,76 @@
 {
-  "slides": [
+  "sliderSlides": [
     {
       "src": "/slidesImages/airpods.webp",
       "alt": "Image 1 for carousel",
       "label": "iPhone 14 Series",
       "subtitle": "Up to 10% off Voucher",
-      "icon": "fa-brands fa-apple"
+      "icon": "fa-brands fa-apple",
+      "link": "Shop Now"
     },
     {
       "src": "/slidesImages/applewatch.jpg",
       "alt": "Image 2 for carousel",
       "label": "Apple Watch Series",
       "subtitle": "Special Deals Today",
-      "icon": "fa-brands fa-apple"
+      "icon": "fa-brands fa-apple",
+      "link": "Shop Now"
+
     },
     {
       "src": "/slidesImages/macbook.jpg",
       "alt": "Image 3 for carousel",
       "label": "MacBook Pro",
       "subtitle": "Save up to $200",
-      "icon": "fa-brands fa-apple"
+      "icon": "fa-brands fa-apple",
+      "link": "Shop Now"
+
     },
     {
       "src": "/slidesImages/iphone.png",
       "alt": "Image 4 for carousel",
       "label": "iPhone 14 Pro",
       "subtitle": "Exclusive Launch Offer",
-      "icon": "fa-brands fa-apple"
+      "icon": "fa-brands fa-apple",
+      "link": "Shop Now"
+
+
+    }
+  ],
+  "categorySlide": [
+    {
+      "src": "categoryImage.png",
+      "alt": "bt-speaker-image",
+      "label": "categories",
+      "subtitle": "Enhance Your Music Experience",
+      "countdown": "true",
+      "button": "Shop Now"
+    }
+  ],
+   "newArrivalSlides": [
+    {
+      "title": "PlayStation 5",
+      "description": "Black and White version of the PS5 coming out on sale.",
+      "src": "./newArrivalImages/p-5.png",
+      "link": "#"
+    },
+    {
+      "title": "Women’s Collections",
+      "description": "Featured woman collections that give you another vibe.",
+      "src": "./newArrivalImages/women.png",
+      "link": "#"
+    },
+    {
+      "title": "Speakers 5",
+      "description": "Amazon wireless speakers",
+      "src": "./newArrivalImages/speakers.png",
+      "link": "#"
+    },
+    {
+      "title": "Perfume",
+      "description": "GUCCI INTENSE OUD EDP",
+      "src": "./newArrivalImages/gp.png",
+      "link": "#"
     }
   ]
 }

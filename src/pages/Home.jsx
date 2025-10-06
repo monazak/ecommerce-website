@@ -5,6 +5,10 @@ import Countdown from '../components/Countdown'
 import Arrows from '../components/Arrows'
 import Section from '../components/Section'
 import {sections} from '../components/data/sections.js'
+import Slide from '../components/Slide.jsx'
+import {categorySlide} from '../components/data/imageSlider.json'
+import NewArrivalContainer from '../components/NewArrivalContainer.jsx'
+
 function Home({isSidebarOpen, closeSidebar}) {
   return (
 <>
@@ -12,11 +16,15 @@ function Home({isSidebarOpen, closeSidebar}) {
     <Section section={sections[0]} />
     <Section section={sections[1]} />
     <Section section={sections[2]} />
+    <Section item={categorySlide[0]} />
+
+    
     <Section section={sections[3]} />
     <Section section={sections[4]} />
+    <NewArrivalContainer/>
 
-
-    </>
+    
+</>
   )
 }
 

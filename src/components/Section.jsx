@@ -10,8 +10,18 @@ import {features} from "./data/features.json";
 import ProductCard from './ProductCard';
 import CategoryCard from './CategoryCard';
 import FeatureCard from './FeatureCard';
+import Slide from './Slide'
 
-function Section({section}) {
+function Section({section, item}) {
+
+    if (item) {
+     return (
+      <div className="section-container flex flex-col my-10 gap-2 r px-4 py-3 md:px-[4%] lg:px-[7%]">
+        <Slide item={item} />
+      </div>
+         );
+    }
+    if (!section) return null;
 
     let sectionItems=[]
     let CardComponent = ProductCard;
@@ -37,6 +47,7 @@ function Section({section}) {
     }
 
   return (
+    
     <div className='section-container flex flex-col my-10 gap-2' >
         <SectionName name={section.label} />
         <SectionHeader
@@ -48,7 +59,6 @@ function Section({section}) {
         horizontal={section.horizontal}
         items={sectionItems}
         CardComponent={CardComponent}
-        
         />
     </div>
   )

@@ -3,7 +3,7 @@ import SlideDetails from "./SlideDetails";
 
 function Slide({ item }) {
   return (
-    <div className="slide-content flex flex-col md:flex-row gap-4 bg-black p-4 md:p-6 items-center">
+    <div className="slide-content flex flex-col md:flex-row gap-4 bg-black p-4 md:p-6 items-center rounded-lg">
       
       <div className="slide-left flex-1 text-white flex justify-center md:justify-start">
         <SlideDetails
@@ -11,6 +11,10 @@ function Slide({ item }) {
           subtitle={item.subtitle}
           iconClass={item.icon}
           label={item.label}
+          button={item.button}
+          link={item.link}
+          countdown={item.countdown}
+          description={item.description}
         />
       </div>
 

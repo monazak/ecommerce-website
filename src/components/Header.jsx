@@ -1,5 +1,5 @@
 import {useState} from 'react'
-import './Header.css'
+
 
 function Header({cartCount, onToggleSidebar}) {
 
@@ -8,16 +8,17 @@ function Header({cartCount, onToggleSidebar}) {
   return (
     <div className='header-container relative flex justify-between items-center px-4 py-3 border-b md:px-[4%] lg:px-[7%]'>
 
-        <div className='flex items-center justify-between w-full md:w-auto'>
-          <button className=' md:hidden flex items-center '
+
+      
+          <button className='md:hidden flex items-center gap-1 text-sm '
                   onClick={onToggleSidebar}>
-              <i className="fa-solid fa-list "></i>
-              <span> <p className='text-small'>Categories</p></span>
 
+              <i className="fa-solid fa-list"></i>
+              <span> Categories</span>
           </button>
-        <p className='logo text-center flex-1 md:flex-none'>Exclusive</p>
+        <p className='logo  absolute -translate-x-1/2 left-1/2  md:static md:translate-x-0  flex-1 md:flex-none font-bold text-xl'>Exclusive</p>
 
-        </div>
+
         
  
            
@@ -47,6 +48,8 @@ function Header({cartCount, onToggleSidebar}) {
        <i className="fa-solid fa-bars text-xl"></i>
       </button>
 
+      
+
       {isMenuOpen && (
         <div className="mobile-container absolute top-full left-0 w-full bg-gray-400 text-white p-2 md:hidden flex items-center justify-between ">
           <ul className="mobile-list  flex space-x-2 text-sm ">
@@ -66,11 +69,8 @@ function Header({cartCount, onToggleSidebar}) {
               <i className=" fa-solid fa-magnifying-glass search-icon absolute right-2 top-1/2 -translate-y-1/2"></i>
             </div>
 
-            <div className="cart-icon flex items-center space-x-1 relative">
-              <i className="fa-regular fa-heart"></i>
-              <i className="fa-solid fa-cart-shopping"></i>
-              <span className="cart-count absolute -top-2 -right-2 bg-red-500 text-white text-xs rounded-full px-1">0</span>
-            </div>
+
+
           </div>
         </div>
       )}
