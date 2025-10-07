@@ -1,14 +1,12 @@
-import React from 'react'
+import React from 'react';
 
-function CategoryCard({name,icon}) {
+function CategoryCard({ name, icon }) {
   return (
-    <div >
-      <div className="flex flex-col items-center justify-center w-40 h-40 border rounded-xl shadow-sm hover:shadow-md transition">
-      <i className={`${icon} w-13 h-12 mb-2 `} />
+    <div className="flex-1 flex flex-col items-center border justify-center bg-white rounded-xl shadow-lg hover:shadow-md hover:bg-red-500 hover:text-white transition  h-[150px] w-[210px]">
+      <i className={`${icon} text-4xl mb-3`} /> {/* Bigger icon */}
       <p className="text-sm font-medium">{name}</p>
     </div>
-    </div>
-  )
+  );
 }
 
-export default CategoryCard
+export default CategoryCard;

@@ -10,7 +10,7 @@ function ItemsContainer({ horizontal = true, items = [], CardComponent }) {
       ? " overflow-x-auto"
       : " flex-wrap justify-center";
   } else if (CardComponent === CategoryCard ) {
-    containerClasses = "flex flex-wrap justify-between items-center w-full px-[5%] py-6";
+    containerClasses = "flex flex-wrap justify-center gap-4 w-full px-4 py-3 md:px-[4%] lg:px-[7%]";
   } else if (CardComponent === FeatureCard) {
     containerClasses = "flex flex-wrap justify-center gap-8 py-6";
   }
