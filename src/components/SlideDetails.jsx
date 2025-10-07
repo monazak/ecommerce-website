@@ -1,5 +1,6 @@
 import React from "react";
 import Countdown from "./Countdown";
+import Button from "./Button";
 
 function SlideDetails({ title,label, subtitle, iconClass, countdown, button,link, description  }) {
   return (
@@ -21,19 +22,11 @@ function SlideDetails({ title,label, subtitle, iconClass, countdown, button,link
           <span className="font-semibold text-white"><Countdown targetDate={new Date(2025, 9, 10, 23, 59, 59)}/></span>
         </div>
       )}
-
-      <a href="#" className="underline text-white hover:text-gray-300 w-max flex items-center gap-2"> Shop Now<span><i className="fa-solid fa-arrow-right ml-2"></i></span> </a>
+      {link && <a href="#" className="underline text-white hover:text-gray-300 w-max flex items-center gap-2"> Shop Now<span><i className="fa-solid fa-arrow-right ml-2"></i></span> </a>}
 
       {/* CTA Button */}
       {button && (
-        
-        <a
-          href="#"
-          className="inline-flex items-center gap-2 text-white underline hover:text-gray-300"
-        >
-          {button}
-          <i className="fa-solid fa-arrow-right"></i>
-        </a>
+          <Button text={button} color="green"/>
       )}
     </div>
   );

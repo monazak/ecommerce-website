@@ -2,7 +2,7 @@ import React from 'react'
 import SectionName from './SectionName'
 import SectionHeader from './SectionHeader'
 import ItemsContainer from './ItemsContainer'
-
+import NewArrivalContainer from './NewArrivalContainer'
 import {products} from "./data/products.json";
 import {categories} from "./data/categories.json";
 import {features} from "./data/features.json";
@@ -12,7 +12,10 @@ import CategoryCard from './CategoryCard';
 import FeatureCard from './FeatureCard';
 import Slide from './Slide'
 
-function Section({section, item}) {
+import Button from './Button'
+
+
+function Section({section, item, slide}) {
 
     if (item) {
      return (
@@ -48,18 +51,31 @@ function Section({section, item}) {
 
   return (
     
-    <div className='section-container flex flex-col my-10 gap-2' >
-        <SectionName name={section.label} />
-        <SectionHeader
-        title={section.title} 
-        showTimer={section.showTimer} 
-        timerData={section.timerData} 
-        showArrows={section.showArrows} />
-        <ItemsContainer 
-        horizontal={section.horizontal}
-        items={sectionItems}
-        CardComponent={CardComponent}
-        />
+    <div className='flex flex-col justify-center  gap-5' >
+        <div className='section-container flex flex-col  my-10 gap-5'>
+          <SectionName name={section.label} />
+            <SectionHeader
+            title={section.title} 
+            showTimer={section.showTimer} 
+            timerData={section.timerData} 
+            showArrows={section.showArrows}
+            headerButton={section.headerButton}
+            buttonText={section.buttonText}
+            />
+            
+            {slide === 'NewArrivalContainer' && <NewArrivalContainer />}
+
+            <ItemsContainer 
+            horizontal={section.horizontal}
+            items={sectionItems}
+            CardComponent={CardComponent}
+            />
+        </div>
+        <div className='flex justify-center'>
+          {section.bottomButton && <Button text={section.buttonText}/>}
+        </div>
+        
+    
     </div>
   )
 }

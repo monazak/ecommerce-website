@@ -8,10 +8,11 @@ import {sections} from '../components/data/sections.js'
 import Slide from '../components/Slide.jsx'
 import {categorySlide} from '../components/data/imageSlider.json'
 import NewArrivalContainer from '../components/NewArrivalContainer.jsx'
-
+import Button from '../components/Button.jsx'
 function Home({isSidebarOpen, closeSidebar}) {
   return (
 <>
+    <Button text="xsxsx" color="green"/>
     <CategoryWithSlider isSidebarOpen={isSidebarOpen} closeSidebar={closeSidebar} />
     <Section section={sections[0]} />
     <Section section={sections[1]} />
@@ -20,8 +21,7 @@ function Home({isSidebarOpen, closeSidebar}) {
 
     
     <Section section={sections[3]} />
-    <Section section={sections[4]} />
-    <NewArrivalContainer/>
+    <Section section={sections[4]} slide="NewArrivalContainer" />
 
     
 </>
