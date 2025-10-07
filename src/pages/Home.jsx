@@ -11,8 +11,8 @@ import NewArrivalContainer from '../components/NewArrivalContainer.jsx'
 import Button from '../components/Button.jsx'
 function Home({isSidebarOpen, closeSidebar}) {
   return (
-<>
-    <Button text="xsxsx" color="green"/>
+
+<div className="flex flex-col gap-16 ">
     <CategoryWithSlider isSidebarOpen={isSidebarOpen} closeSidebar={closeSidebar} />
     <Section section={sections[0]} />
     <Section section={sections[1]} />
@@ -23,8 +23,10 @@ function Home({isSidebarOpen, closeSidebar}) {
     <Section section={sections[3]} />
     <Section section={sections[4]} slide="NewArrivalContainer" />
 
+</div>
+   
     
-</>
+
   )
 }
 

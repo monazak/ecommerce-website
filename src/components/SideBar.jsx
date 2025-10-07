@@ -1,79 +1,88 @@
 import React, { useState } from "react";
-import "./SideBar.css"; // Keep your custom styles for non-responsive parts
 
-function SideBar({isSidebarOpen, closeSidebar}) {
+export default function SideBar({ isSidebarOpen, closeSidebar }) {
   const [open, setOpen] = useState({ women: false, men: false });
-
-  function toggle(category) {
-    setOpen((prev) => ({ ...prev, [category]: !prev[category] }));
-  }
 
   return (
     <>
+      {/* === Overlay for mobile === */}
+{isSidebarOpen && (
+  <div
+    className="fixed inset-0 bg-black/50 z-40 md:hidden"
+    onClick={closeSidebar}
+  ></div>
+)}
 
-      {isSidebarOpen && (
-        <div
-          className="fixed inset-0 bg-black bg-opacity-50 z-40 md:hidden"
+
+      {/* === Sidebar itself === */}
+<nav
+  className={`
+    fixed top-0 left-0 h-full w-64 bg-white shadow-lg transform transition-transform duration-300 ease-in-out z-50
+    md:static md:translate-x-0 md:h-auto md:w-[220px] md:shadow-none
+    ${isSidebarOpen ? "translate-x-0" : "-translate-x-full"}
+  `}
+>
+
+        <div className="p-4 md:p-2 overflow-y-auto h-full">
+          <ul className="flex flex-col gap-2">
+            <li>
+              <button
+                className="w-full text-left flex justify-between items-center px-2 py-1"
+                onClick={() => setOpen((o) => ({ ...o, women: !o.women }))}
+              >
+                Woman’s Fashion{" "}
+                <i
+                  className={`fa-solid fa-chevron-down transition-transform duration-200 ${
+                    open.women ? "rotate-0" : "-rotate-90"
+                  }`}
+                />
+              </button>
+              {open.women && (
+                <ul className="pl-4 text-sm text-gray-600 space-y-1">
+                  <li>Dresses</li>
+                  <li>Makeup</li>
+                </ul>
+              )}
+            </li>
+
+            <li>
+              <button
+                className="w-full text-left flex justify-between items-center px-2 py-1"
+                onClick={() => setOpen((o) => ({ ...o, men: !o.men }))}
+              >
+                Men’s Fashion{" "}
+                <i
+                  className={`fa-solid fa-chevron-down transition-transform duration-200 ${
+                    open.men ? "rotate-0" : "-rotate-90"
+                  }`}
+                />
+              </button>
+              {open.men && (
+                <ul className="pl-4 text-sm text-gray-600 space-y-1">
+                  <li>Shirts</li>
+                  <li>Pants</li>
+                </ul>
+              )}
+            </li>
+
+            <li>Electronics</li>
+            <li>Home & Lifestyle</li>
+            <li>Medicine</li>
+            <li>Sports & Outdoor</li>
+            <li>Baby’s & Toys</li>
+            <li>Groceries & Pets</li>
+            <li>Health & Beauty</li>
+          </ul>
+        </div>
+
+        {/* Mobile close button */}
+        <button
           onClick={closeSidebar}
-        ></div>
-      )}
-
-      <aside
-        className={`
-          fixed top-0 left-0 h-full w-64 bg-gray-100 p-4 z-50 transform transition-transform duration-300
-          md:relative md:translate-x-0 md:flex md:flex-col md:w-auto
-          ${isSidebarOpen ? "translate-x-0" : "-translate-x-full"}
-        `}
-      >
-        <ul className="sidebar-menu flex flex-col gap-3 px-2">
-
-          <li className="relative">
-            <button
-              onClick={() => toggle("women")}
-              className="sidebar-btn flex justify-between items-center w-full pr-6"
-            >
-              Woman’s Fashion
-              <i
-                className={`fa-solid fa-chevron-down transition-transform ${
-                  open.women ? "rotate-0" : "-rotate-90"
-                }`}
-              ></i>
-            </button>
-            <ul className={`submenu ${open.women ? "show" : ""}`}>
-              <li>Dresses</li>
-              <li>Makeup</li>
-            </ul>
-          </li>
-
-          <li className="relative">
-            <button
-              onClick={() => toggle("men")}
-              className="sidebar-btn flex justify-between items-center w-full pr-6"
-            >
-              Men’s Fashion
-              <i
-                className={`fa-solid fa-chevron-down transition-transform ${
-                  open.men ? "rotate-0" : "-rotate-90"
-                }`}
-              ></i>
-            </button>
-            <ul className={`submenu ${open.men ? "show" : ""}`}>
-              <li>Shirts</li>
-              <li>Pants</li>
-            </ul>
-          </li>
-
-          <li>Electronics</li>
-          <li>Home & Lifestyle</li>
-          <li>Medicine</li>
-          <li>Sports & Outdoor</li>
-          <li>Baby’s & Toys</li>
-          <li>Groceries & Pets</li>
-          <li>Health & Beauty</li>
-        </ul>
-      </aside>
+          className="md:hidden absolute bottom-4 right-4 text-gray-500 hover:text-black"
+        >
+          <i className="fa-solid fa-xmark text-xl"></i>
+        </button>
+      </nav>
     </>
   );
 }
-
-export default SideBar;
