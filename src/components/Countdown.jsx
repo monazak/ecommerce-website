@@ -22,11 +22,11 @@ function Countdown({ targetDate }) {
   }, [targetDate]); 
 
   return (
-    <div className="countdown flex gap-2 text-sm md:text-base">
-      <span>{timeLeft.days}d</span>:
-      <span>{timeLeft.hours}h</span>:
-      <span>{timeLeft.mins}m</span>:
-      <span>{timeLeft.secs}s</span>
+    <div className="countdown flex gap-2 text-sm md:text-lg ">
+      <span className="font-bold">{timeLeft.days}d</span>:
+      <span className="font-bold">{timeLeft.hours}h</span>:
+      <span className="font-bold">{timeLeft.mins}m</span>:
+      <span className="font-bold">{timeLeft.secs}s</span>
     </div>
   );
 }
