@@ -46,7 +46,7 @@ export default function SideBar({ isSidebarOpen, closeSidebar }) {
         `}
       >
         <div className="p-4 md:p-0  h-auto ">
-          <ul className="flex flex-col gap-1 text-gray-800">
+          <ul className="flex flex-col gap-2  text-gray-800">
             {categories.map((category) => (
               <li key={category.title}>
                 {/* === Main Category Button === */}

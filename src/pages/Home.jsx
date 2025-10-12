@@ -23,6 +23,7 @@ function Home({isSidebarOpen, closeSidebar}) {
     <Section section={sections[3]} />
     <Section section={sections[4]} slide="NewArrivalContainer" />
 
+
 </div>
    
     

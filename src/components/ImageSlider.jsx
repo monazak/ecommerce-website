@@ -22,7 +22,7 @@ export default function ImageSlider() {
   }
 
   return (
-    <div className="carousel-container relative  h-[300px] overflow-hidden bg-black">
+    <div className="carousel-container relative  min-h-[350px] md:h-[350px] overflow-hidden bg-black">
       {slides.map((item, i) => (
         <div
           key={i}
@@ -43,7 +43,7 @@ export default function ImageSlider() {
           <button
             key={idx}
             onClick={() => setIndex(idx)}
-            className={`w-3 h-3 rounded-full ${idx === index ? 'bg-red-600' : 'bg-gray-400'}`}
+            className={`w-3 h-3 rounded-full ${idx === index ? 'bg-red-600 border-2' : 'bg-gray-400'}`}
             aria-label={`Go to slide ${idx + 1}`}
           />
         ))}
