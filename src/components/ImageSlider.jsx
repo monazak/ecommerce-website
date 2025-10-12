@@ -22,7 +22,7 @@ export default function ImageSlider() {
   }
 
   return (
-    <div className="carousel-container relative  h-[300px] rounded-2xl overflow-hidden bg-black">
+    <div className="carousel-container relative  h-[300px] overflow-hidden bg-black">
       {slides.map((item, i) => (
         <div
           key={i}
