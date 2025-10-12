@@ -61,6 +61,7 @@ function Section({section, item, slide}) {
             showArrows={section.showArrows}
             headerButton={section.headerButton}
             buttonText={section.buttonText}
+            variant={section.variant}
             />
             
             {slide === 'NewArrivalContainer' && <NewArrivalContainer />}

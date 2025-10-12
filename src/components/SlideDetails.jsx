@@ -47,7 +47,7 @@ function SlideDetails({
       {/* === Countdown (optional) === */}
       {countdown && (
         <div className="m-auto md:m-0 text-sm md:text-base font-semibold text-gray-200 bg-gray-800/40 px-4 py-2 rounded-lg w-fit">
-          <Countdown targetDate={new Date(2025, 9, 19, 23, 59, 59)} />
+          <Countdown targetDate={new Date(2025, 9, 19, 23, 59, 59)} variant="circle" />
         </div>
       )}
 

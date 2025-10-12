@@ -7,6 +7,7 @@ export const sections = [
     title: "Flash Sales",
     showTimer: true,
     timerData: "2025-12-10T23:59:59",
+    variant:"minimal",
     showArrows: true,
     horizontal: true,
     array: products.filter(p => p.saleRatio).map(p => p.id),

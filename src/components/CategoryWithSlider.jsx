@@ -4,7 +4,7 @@ import ImageSlider from "./ImageSlider";
 
 export default function CategoryWithSlider({ isSidebarOpen, closeSidebar }) {
   return (
-    <div className="category-with-slider md:px-[4%] lg:px-[7%] mt-7 md:mt-0">
+    <div className="category-with-slider md:px-[4%] lg:px-[7%] mt-7 md:mt-0 h-[400px]">
       <div className="flex px-5 md:gap-5 md:px-0 relative ">
 
         

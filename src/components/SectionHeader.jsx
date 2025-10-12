@@ -9,23 +9,24 @@ import Button from "./Button";
 function SectionHeader({
   title,           
   showTimer = true,
-  timerData=  new Date(2025, 9, 10, 23, 59, 59),
+  timerData=  new Date(2025, 25, 10, 23, 59, 59),
   showArrows = true, 
   onPrev,           
   onNext,
   headerButton,
-  buttonText         
+  buttonText,
+  variant,        
 }) {
   return (
     <>
-    <div className="section-header flex justify-between gap-3 md:gap-10 items-center mb-4 px-4 py-1 md:px-[4%] lg:px-[7%]">
+    <div className="section-header flex justify-between gap-3 md:gap-20 items-end mb-4 px-4 py-1 md:px-[4%] lg:px-[7%]">
         
 
-        <h2 className=" text-lg md:text-xl font-bold">{title}</h2>
+        <h2 className=" text-lg md:text-2xl  font-bold">{title}</h2>
 
        {showTimer && timerData && (
-          <div className="flex-1 ">
-              <Countdown targetDate={timerData} />
+          <div className="flex-1  ">
+              <Countdown targetDate={timerData} variant={variant} />
           </div>
         )}
 
