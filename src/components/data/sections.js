@@ -32,7 +32,8 @@ export const sections = [
     horizontal: true,
     array: products.filter(p => !p.saleRatio).map(p => p.id),
     headerButton: true,
-    buttonText:"View All"
+    buttonText:"View All",
+    showRatio:false
   },
   {
     id:"ourProducts",
@@ -41,7 +42,11 @@ export const sections = [
     showTimer: false,
     showArrows: true,
     horizontal: false,
-    array: [1,2,3,4,5,6,7,8],
+    rateFlex:true,
+    colorsSection:true,
+    array: products
+          .filter(p => !p.saleRatio || p.colors)
+          .map(p => p.id),
     bottomButton: true ,
     buttonText:"View All Products" 
   },

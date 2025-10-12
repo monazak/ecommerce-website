@@ -85,6 +85,7 @@
       "name": "USB-C Charging Cable",
       "image": "/products/usb-c-cable.jpg",
       "price": 12.99,
+      "oldPrice": 39.99,
       "rating": 4.3,
       "reviews": 250
     },
@@ -94,7 +95,8 @@
       "image": "/products/office-chair.jpg",
       "price": 199.99,
       "rating": 4.7,
-      "reviews": 180
+      "reviews": 180,
+      "colors":["green", "red"]
     },
     {
       "id": 11,
@@ -104,21 +106,59 @@
       "rating": 4.6,
       "reviews": 220
     },
-    {
+     {
       "id": 12,
+      "name": "USB-C Charging Cable",
+      "image": "/products/usb-c-cable.jpg",
+      "price": 12.99,
+      "rating": 4.3,
+      "reviews": 250,
+      "oldPrice": 39.99,
+      "colors":["blue", "pink"]
+    },
+    {
+      "id": 13,
+      "name": "Ergonomic Office Chair",
+      "image": "/products/office-chair.jpg",
+      "price": 199.99,
+      "oldPrice": 39.99,
+      "rating": 4.7,
+      "reviews": 180,
+      "colors":["green", "red"]
+    },
+    {
+      "id": 14,
       "name": "27-inch 4K Monitor",
       "image": "/products/monitor.jpg",
       "price": 349.99,
       "rating": 4.6,
-      "reviews": 220      
+      "reviews": 220
+    },
+    {
+      "id": 15,
+      "name": "27-inch 4K Monitor",
+      "image": "/products/monitor.jpg",
+      "price": 349.99,
+      "rating": 4.6,
+      "reviews": 220,
+      "colors":["blue", "black"]      
     },
         {
-      "id": 13,
+      "id": 14,
       "name": "27-inch 4K Monitor",
       "image": "/products/monitor.jpg",
       "price": 349.99,
       "rating": 4.6,
-      "reviews": 220      
+      "reviews": 220
+    },
+    {
+      "id": 15,
+      "name": "27-inch 4K Monitor",
+      "image": "/products/monitor.jpg",
+      "price": 349.99,
+      "rating": 4.6,
+      "reviews": 220,
+      "colors":["blue", "black"]      
     }
   ]
 }

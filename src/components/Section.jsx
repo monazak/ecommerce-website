@@ -28,7 +28,7 @@ function Section({section, item, slide}) {
 
     let sectionItems=[]
     let CardComponent = ProductCard;
-
+    
     switch (section.id){
         case 'browseByCategory':
             sectionItems = section.array
@@ -63,13 +63,15 @@ function Section({section, item, slide}) {
             buttonText={section.buttonText}
             variant={section.variant}
             />
-            
+         
             {slide === 'NewArrivalContainer' && <NewArrivalContainer />}
 
             <ItemsContainer 
             horizontal={section.horizontal}
             items={sectionItems}
             CardComponent={CardComponent}
+            rateFlex={section.rateFlex}
+            colorsSection={section.colorsSection}
             />
         </div>
         <div className='flex justify-center'>

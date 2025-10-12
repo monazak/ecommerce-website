@@ -9,6 +9,10 @@ function ProductCard({
   rating, 
   reviews,
   saleRatio,
+  colors,
+  rateFlex,
+  colorsSection
+
 }) {
   const [expanded, setExpanded] = useState(false);
 
@@ -32,7 +36,7 @@ function ProductCard({
   };
 
   return (
-    <div className="product-card w-80 bg-white shadow-md rounded overflow-hidden relative group">
+    <div className="product-card w-80  bg-white shadow-md rounded overflow-hidden relative group">
       <div className="bg-gray-100 flex justify-center items-center relative w-full h-80">
         {saleRatio && (
           <div className="absolute top-2 left-2 bg-red-500 text-white text-xs px-2 py-1 rounded z-10">
@@ -55,21 +59,48 @@ function ProductCard({
         </div>
 
         <div className="absolute top-2 right-2 flex flex-col gap-2">
-          <button className="bg-white p-1 rounded-full shadow hover:bg-gray-200">
+          <button className="flex items-center justify-center bg-white p-1 h-8 w-8 rounded-full shadow hover:text-red-500">
             <i className="fa-regular fa-heart"></i>
           </button>
-          <button className="bg-white p-1 rounded-full shadow hover:bg-gray-200">
+          <button className="flex items-center justify-center bg-white p-1 h-8 w-8  rounded-full shadow hover:text-red-500">
             <i className="fa-regular fa-eye"></i>
           </button>
         </div>
       </div>
 
-      <div className="p-3 flex flex-col gap-1">
+      <div className="p-3 flex flex-col gap-1 h-24">
         <div className="w-full pr-4 cursor-pointer" onClick={() => setExpanded(!expanded)}>
           <h3 className={`text-sm font-medium ${!expanded ? "truncate" : ''}`}>{name}</h3>
         </div>
 
-        <div className="flex gap-2 items-center">
+      {rateFlex && 
+      <div className="flex flex-col "> 
+          <div className="flex justify-betwwen gap-3">
+            <span className="text-base font-bold">${price}</span>
+            <div className="flex items-center gap-1">
+              {renderStars(rating)}
+            </div>
+            <span className="text-gray-500">({reviews})</span>
+          </div>
+        {colorsSection && colors && colors.length >0 &&
+    
+           <div className="flex gap-2 mt-2">
+        {colors.map((color, index) => (
+          <span
+            key={index}
+            className={`h-5 w-5 rounded-full border border-gray-300`}
+            style={{ backgroundColor: color }}
+          ></span>
+        ))}
+      </div>
+      
+        }  
+        {  console.log(colors)}
+      </div>
+     
+      }
+      {!rateFlex && 
+      <> <div className="flex gap-2 items-center">
           <span className="text-base font-bold">${price}</span>
           {oldPrice && (
             <span className="text-xs line-through text-gray-500">${oldPrice}</span>
@@ -81,7 +112,9 @@ function ProductCard({
             {renderStars(rating)}
           </div>
           <span className="text-gray-500">({reviews})</span>
-        </div>
+        </div></>
+      }
+       
       </div>
     </div>
   );
