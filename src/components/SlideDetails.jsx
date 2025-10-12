@@ -3,7 +3,6 @@ import Countdown from "./Countdown";
 import Button from "./Button";
 
 function SlideDetails({
-  title,
   label,
   subtitle,
   iconClass,
@@ -11,10 +10,11 @@ function SlideDetails({
   button,
   link,
   description,
-}) {
+  color
+})
+{
   return (
     <div className="details-container flex flex-col justify-center gap-1 md:gap-3 text-white pt-4">
-      {/* === Icon + Label === */}
       {(iconClass || label) && (
         <div className="icon-text flex items-center justify-center  md:justify-start gap-3">
           {iconClass && (
@@ -23,22 +23,26 @@ function SlideDetails({
             ></i>
           )}
           {label && (
-            <span className="text-lg md:text-base tracking-wide uppercase">
-              {label}
-            </span>
+      <span
+        className={`text-lg md:text-base tracking-wide uppercase ${
+          color === "green" ? "text-green-400" : "text-white"
+        }`} >
+        {label}
+      </span>
           )}
         </div>
       )}
 
       {/* === Main title/subtitle === */}
       {subtitle && (
-        <h3 className="text-1xl m-auto md:m-0 md:text-5xl font-extrabold leading-snug tracking-tight max-w-md">
+        <h3 className="text-1xl m-auto md:m-0 md:text-4xl leading-snug tracking-tight max-w-md">
           {subtitle}
         </h3>
       )}
 
       {/* === Description (optional) === */}
       {description && (
+        
         <p className="text-sm md:text-base text-gray-300 max-w-md leading-relaxed">
           {description}
         </p>
@@ -65,9 +69,9 @@ function SlideDetails({
       )}
 
       {/* === Button (optional) === */}
-      {button && (
+      {button &&  (
         <div className="mt-3 m-auto md:m-0">
-          <Button text={button} color="green" />
+          <Button text={button} color={color} />
         </div>
       )}
     </div>

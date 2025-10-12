@@ -42,9 +42,11 @@
       "src": "categoryImage.png",
       "alt": "bt-speaker-image",
       "label": "categories",
+      "color":"green",
       "subtitle": "Enhance Your Music Experience",
       "countdown": "true",
       "button": "Shop Now"
+
     }
   ],
    "newArrivalSlides": [

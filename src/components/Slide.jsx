@@ -15,6 +15,7 @@ function Slide({ item }) {
           link={item.link}
           countdown={item.countdown}
           description={item.description}
+          color={item.color}
         />
       </div>
 
