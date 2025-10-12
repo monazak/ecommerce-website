@@ -14,7 +14,7 @@ export default function App() {
 
   return (
     <Router>
-      <div className="min-h-screen flex flex-col">
+      <div className="min-h-screen flex flex-col ">
         <TopHeader/>
         <Header cartCount={0} onToggleSidebar={toggleSidebar} />
         <main className="flex-1">
