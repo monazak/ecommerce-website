@@ -45,7 +45,7 @@ function Header({ cartCount = 0, onToggleSidebar }) {
             type="text"
             placeholder="What are you looking for?"
           />
-          <i className="fa-solid fa-magnifying-glass px-3 text-gray-500"></i>
+          <i className="fa-solid fa-magnifying-glass pr-2 text-gray-500"></i>
         </div>
 
         {/* Cart icons always visible */}

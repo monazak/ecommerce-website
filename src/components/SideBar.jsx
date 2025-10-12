@@ -1,84 +1,91 @@
 import React, { useState } from "react";
-
+ 
 export default function SideBar({ isSidebarOpen, closeSidebar }) {
-  const [open, setOpen] = useState({ women: false, men: false });
+  const [openSection, setOpenSection] = useState(null);
+
+  const toggleSection = (section) => {
+    setOpenSection((prev) => (prev === section ? null : section));
+  };
+
+  const categories = [
+    {
+      title: "Women’s Fashion",
+      key: "women",
+      items: ["Dresses", "Makeup"],
+    },
+    {
+      title: "Men’s Fashion",
+      key: "men",
+      items: ["Shirts", "Pants"],
+    },
+    { title: "Electronics" },
+    { title: "Home & Lifestyle" },
+    { title: "Medicine" },
+    { title: "Sports & Outdoor" },
+    { title: "Baby’s & Toys" },
+    { title: "Groceries & Pets" },
+    { title: "Health & Beauty" },
+  ];
 
   return (
     <>
       {/* === Overlay for mobile === */}
-{isSidebarOpen && (
-  <div
-    className="fixed inset-0 bg-black/50 z-40 md:hidden"
-    onClick={closeSidebar}
-  ></div>
-)}
+      {isSidebarOpen && (
+        <div
+          className="fixed inset-0 bg-black/50 z-40 md:hidden"
+          onClick={closeSidebar}
+        ></div>
+      )}
 
+      {/* === Sidebar === */}
+      <nav
+        className={`
+          fixed top-0 left-0 h-full w-64 bg-white shadow-lg transform transition-transform duration-300 ease-in-out z-50
+          md:static md:translate-x-0 md:h-auto md:w-[220px] md:shadow-none
+          ${isSidebarOpen ? "translate-x-0" : "-translate-x-full"}
+        `}
+      >
+        <div className="p-4 md:p-0  h-auto ">
+          <ul className="flex flex-col gap-1 text-gray-800">
+            {categories.map((category) => (
+              <li key={category.title}>
+                {/* === Main Category Button === */}
+                <button
+                  className="w-full text-left flex justify-between items-center px-0 py-1 font-medium hover:bg-gray-100 rounded-md transition"
+                  onClick={() => category.items && toggleSection(category.key)}
+                >
+                  <span>{category.title}</span>
+                  {category.items && (
+                    <i
+                      className={`fa-solid fa-chevron-down text-sm transition-transform duration-200 ${
+                        openSection === category.key ? "rotate-0" : "-rotate-90"
+                      }`}
+                    />
+                  )}
+                </button>
 
-      {/* === Sidebar itself === */}
-<nav
-  className={`
-    fixed top-0 left-0 h-full w-64 bg-white shadow-lg transform transition-transform duration-300 ease-in-out z-50
-    md:static md:translate-x-0 md:h-auto md:w-[220px] md:shadow-none
-    ${isSidebarOpen ? "translate-x-0" : "-translate-x-full"}
-  `}
->
-
-        <div className="p-4 md:p-2 overflow-y-auto h-full">
-          <ul className="flex flex-col gap-2">
-            <li>
-              <button
-                className="w-full text-left flex justify-between items-center px-2 py-1"
-                onClick={() => setOpen((o) => ({ ...o, women: !o.women }))}
-              >
-                Woman’s Fashion{" "}
-                <i
-                  className={`fa-solid fa-chevron-down transition-transform duration-200 ${
-                    open.women ? "rotate-0" : "-rotate-90"
-                  }`}
-                />
-              </button>
-              {open.women && (
-                <ul className="pl-4 text-sm text-gray-600 space-y-1">
-                  <li>Dresses</li>
-                  <li>Makeup</li>
-                </ul>
-              )}
-            </li>
-
-            <li>
-              <button
-                className="w-full text-left flex justify-between items-center px-2 py-1"
-                onClick={() => setOpen((o) => ({ ...o, men: !o.men }))}
-              >
-                Men’s Fashion{" "}
-                <i
-                  className={`fa-solid fa-chevron-down transition-transform duration-200 ${
-                    open.men ? "rotate-0" : "-rotate-90"
-                  }`}
-                />
-              </button>
-              {open.men && (
-                <ul className="pl-4 text-sm text-gray-600 space-y-1">
-                  <li>Shirts</li>
-                  <li>Pants</li>
-                </ul>
-              )}
-            </li>
-
-            <li>Electronics</li>
-            <li>Home & Lifestyle</li>
-            <li>Medicine</li>
-            <li>Sports & Outdoor</li>
-            <li>Baby’s & Toys</li>
-            <li>Groceries & Pets</li>
-            <li>Health & Beauty</li>
+                {/* === Dropdown Items === */}
+                {category.items && openSection === category.key && (
+                  <ul className="pl-6 mt-1 space-y-1 text-sm text-gray-600 animate-fadeIn">
+                    {category.items.map((item) => (
+                      <li
+                        key={item}
+                        className="hover:text-black cursor-pointer transition"
+                      >
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                )}
+              </li>
+            ))}
           </ul>
         </div>
 
-        {/* Mobile close button */}
+        {/* === Close Button (Mobile Only) === */}
         <button
           onClick={closeSidebar}
-          className="md:hidden absolute bottom-4 right-4 text-gray-500 hover:text-black"
+          className="md:hidden absolute bottom-4 right-4 text-gray-500 hover:text-black transition"
         >
           <i className="fa-solid fa-xmark text-xl"></i>
         </button>
