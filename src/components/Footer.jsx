@@ -6,7 +6,7 @@ function Footer() {
     <footer className="bg-black text-white px-4 py-10 md:px-[4%] lg:px-[9%]">
       <div
         className="
-          flex flex-wrap justify-center md:justify-start gap-8 w-full
+          flex flex-wrap justify-start md:justify-start gap-8 w-full
           max-w-7xl mx-auto
         "
       >

@@ -17,7 +17,7 @@ function ItemsContainer({
   // ✅ Proper condition for row behavior
   if (CardComponent === ProductCard || CardComponent === CategoryCard) {
     rowClasses += horizontal
-      ? " overflow-x-auto"
+      ? " overflow-x-auto no-scrollbar "
       : " flex-wrap justify-center";
   } else if (CardComponent === FeatureCard) {
     rowClasses = "flex flex-wrap justify-center gap-8 py-6";

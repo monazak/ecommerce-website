@@ -77,9 +77,7 @@ function Section({section, item, slide}) {
             buttonText={section.buttonText}
             variant={section.variant}
             />
-           
-         {console.log(sectionItems2)}
-         {console.log(sectionItems)}
+
             {slide === 'NewArrivalContainer' && <NewArrivalContainer />}
 
             <ItemsContainer 
