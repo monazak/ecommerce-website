@@ -6,7 +6,7 @@ function NewArrivalSlide({ item, height = "h-[200px]" , rightImage}) {
     <a
       href={item.link || "#"}
       className={`relative p-2 overflow-hidden shadow-lg group block flex ${
-      rightImage ? "justify-end" : "justify-center"
+      rightImage ? "justify-end " : "justify-center"
     } items-center ${height}`}
     >
    
