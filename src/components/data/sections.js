@@ -41,12 +41,11 @@ export const sections = [
     title: "Explore Our Products",
     showTimer: false,
     showArrows: true,
-    horizontal: false,
+    horizontal: true,
     rateFlex:true,
     colorsSection:true,
-    array: products
-          .filter(p => !p.saleRatio || p.colors)
-          .map(p => p.id),
+    array: products.filter(p => !p.saleRatio && !p.colors ).map(p => p.id),
+    array2: products.filter(p => p.colors ).map(p => p.id),
     bottomButton: true ,
     buttonText:"View All Products" 
   },

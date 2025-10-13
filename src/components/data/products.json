@@ -3,7 +3,7 @@
     {
       "id": 1,
       "name": "Wireless Bluetooth Headphones",
-      "image": "/slidesImages/macbook.jpg",
+      "image": "/productsImages/keyboard.png",
       "price": 59.99,
       "oldPrice": 89.99,
       "saleRatio": 33,
@@ -13,7 +13,7 @@
     {
       "id": 2,
       "name": "Smart Watch Series 7",
-      "image": "/slidesImages/iphone.png",
+      "image": "/productsImages/creem.png",
       "price": 199.99,
       "oldPrice": 249.99,
       "saleRatio": 20,
@@ -23,7 +23,7 @@
     {
       "id": 3,
       "name": "DSLR Camera Lens 50mm",
-      "image": "/slidesImages/macbook.jpg",
+      "image": "/productsImages/shoe.png",
       "price": 99.99,
       "oldPrice": 129.99,
       "saleRatio": 23,
@@ -33,7 +33,7 @@
     {
       "id": 4,
       "name": "Gaming Mechanical Keyboard",
-      "image": "/products/airpods.webp",
+      "image": "/productsImages/bag.png",
       "price": 89.99,
       "oldPrice": 129.99,
       "saleRatio": 30,
@@ -43,7 +43,7 @@
     {
       "id": 5,
       "name": "Portable Bluetooth Speaker",
-      "image": "/products/speaker.jpg",
+      "image": "/productsImages/camera.png",
       "price": 49.99,
       "oldPrice": 69.99,
       "saleRatio": 29,
@@ -53,7 +53,7 @@
     {
       "id": 6,
       "name": "4K Action Camera",
-      "image": "/products/action-camera.jpg",
+      "image": "/productsImages/car.png",
       "price": 129.99,
       "oldPrice": 179.99,
       "saleRatio": 28,
@@ -63,7 +63,7 @@
     {
       "id": 7,
       "name": "Wireless Mouse",
-      "image": "/products/mouse.jpg",
+      "image": "/productsImages/cha.png",
       "price": 25.99,
       "oldPrice": 39.99,
       "saleRatio": 35,
@@ -73,7 +73,7 @@
     {
       "id": 8,
       "name": "Smartphone Tripod Stand",
-      "image": "/products/tripod.jpg",
+      "image": "/productsImages/creem.png",
       "price": 39.99,
       "oldPrice": 59.99,
       "saleRatio": 33,
@@ -83,7 +83,7 @@
     {
       "id": 9,
       "name": "USB-C Charging Cable",
-      "image": "/products/usb-c-cable.jpg",
+      "image": "/productsImages/desk.png",
       "price": 12.99,
       "oldPrice": 39.99,
       "rating": 4.3,
@@ -92,7 +92,7 @@
     {
       "id": 10,
       "name": "Ergonomic Office Chair",
-      "image": "/products/office-chair.jpg",
+      "image": "/productsImages/habd.png",
       "price": 199.99,
       "rating": 4.7,
       "reviews": 180,
@@ -101,7 +101,7 @@
     {
       "id": 11,
       "name": "27-inch 4K Monitor",
-      "image": "/products/monitor.jpg",
+      "image": "/productsImages/headphone.png",
       "price": 349.99,
       "rating": 4.6,
       "reviews": 220
@@ -109,27 +109,29 @@
      {
       "id": 12,
       "name": "USB-C Charging Cable",
-      "image": "/products/usb-c-cable.jpg",
+      "image": "/productsImages/jaket.png",
       "price": 12.99,
       "rating": 4.3,
       "reviews": 250,
       "oldPrice": 39.99,
-      "colors":["blue", "pink"]
+      "colors":["blue", "pink"],
+      "newArrival":true
     },
     {
       "id": 13,
       "name": "Ergonomic Office Chair",
-      "image": "/products/office-chair.jpg",
+      "image": "/productsImages/keyboard.png",
       "price": 199.99,
       "oldPrice": 39.99,
       "rating": 4.7,
       "reviews": 180,
-      "colors":["green", "red"]
+      "colors":["green", "red"],
+      "newArrival":true
     },
     {
       "id": 14,
       "name": "27-inch 4K Monitor",
-      "image": "/products/monitor.jpg",
+      "image": "/productsImages/labtob.png",
       "price": 349.99,
       "rating": 4.6,
       "reviews": 220
@@ -137,24 +139,24 @@
     {
       "id": 15,
       "name": "27-inch 4K Monitor",
-      "image": "/products/monitor.jpg",
+      "image": "/productsImages/screen.png",
       "price": 349.99,
       "rating": 4.6,
       "reviews": 220,
       "colors":["blue", "black"]      
     },
         {
-      "id": 14,
+      "id": 16,
       "name": "27-inch 4K Monitor",
-      "image": "/products/monitor.jpg",
+      "image": "/productsImages/shoe.png",
       "price": 349.99,
       "rating": 4.6,
       "reviews": 220
     },
     {
-      "id": 15,
+      "id": 17,
       "name": "27-inch 4K Monitor",
-      "image": "/products/monitor.jpg",
+      "image": "/productsImages/hand.png",
       "price": 349.99,
       "rating": 4.6,
       "reviews": 220,

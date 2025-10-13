@@ -27,9 +27,11 @@ function Section({section, item, slide}) {
     if (!section) return null;
 
     let sectionItems=[]
+    let sectionItems2=[]
     let CardComponent = ProductCard;
     
     switch (section.id){
+      
         case 'browseByCategory':
             sectionItems = section.array
                 .map(id => categories.find(c => c.id === id))
@@ -42,6 +44,18 @@ function Section({section, item, slide}) {
                 .filter(item => item);
                 CardComponent= FeatureCard
             break;
+
+        case 'ourProducts':
+            sectionItems = section.array
+                .map(id => products.find(o => o.id === id))
+                .filter(item => item).splice(0,4)
+                
+              sectionItems2=section.array2
+                .map(id => products.find(o => o.id === id))
+                .filter(item => item).splice(0,4),
+              CardComponent= ProductCard  
+            break;
+
         default :   
             sectionItems = section.array
                 .map(id => products.find(f => f.id === id))
@@ -50,7 +64,7 @@ function Section({section, item, slide}) {
     }
 
   return (
-    
+  
     <div className='flex flex-col justify-center  gap-5' >
         <div className='section-container flex flex-col  my-10 gap-5'>
           <SectionName name={section.label} />
@@ -63,12 +77,15 @@ function Section({section, item, slide}) {
             buttonText={section.buttonText}
             variant={section.variant}
             />
-         
+           
+         {console.log(sectionItems2)}
+         {console.log(sectionItems)}
             {slide === 'NewArrivalContainer' && <NewArrivalContainer />}
 
             <ItemsContainer 
             horizontal={section.horizontal}
             items={sectionItems}
+            items2={sectionItems2}
             CardComponent={CardComponent}
             rateFlex={section.rateFlex}
             colorsSection={section.colorsSection}

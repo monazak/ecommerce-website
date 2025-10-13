@@ -2,26 +2,56 @@ import React from "react";
 import ProductCard from "./ProductCard";
 import CategoryCard from "./CategoryCard";
 import FeatureCard from "./FeatureCard";
-function ItemsContainer({ horizontal = true, items = [], CardComponent, rateFlex, colorsSection }) {
-  let containerClasses ="flex gap-10 justify-start px-4 py-3 md:px-[4%] lg:px-[7%]"
-  if (CardComponent === ProductCard || CategoryCard) {
-    
-    containerClasses += horizontal
+
+function ItemsContainer({
+  horizontal = true,
+  items = [],
+  items2 = [],
+  CardComponent,
+  rateFlex,
+  colorsSection,
+}) {
+  let baseClasses = "px-4 py-3 md:px-[4%] lg:px-[7%]";
+  let rowClasses = "flex gap-10 justify-start";
+
+  // ✅ Proper condition for row behavior
+  if (CardComponent === ProductCard || CardComponent === CategoryCard) {
+    rowClasses += horizontal
       ? " overflow-x-auto"
       : " flex-wrap justify-center";
-  }
-   else if (CardComponent === FeatureCard) {
-    containerClasses = "flex flex-wrap justify-center gap-8 py-6";
+  } else if (CardComponent === FeatureCard) {
+    rowClasses = "flex flex-wrap justify-center gap-8 py-6";
   }
 
   return (
-    <div className={containerClasses} >
-      {
-      items.map((item) => (
-        <div key={item.id} className="flex-shrink-0">
-          <CardComponent {...item} rateFlex={rateFlex} colorsSection={colorsSection} />
+    <div className={`flex flex-col gap-10 ${baseClasses}`}>
+      {/* First Row */}
+      <div className={rowClasses}>
+        {items.map((item) => (
+          <div key={item.id} className="flex-shrink-0">
+            <CardComponent
+              {...item}
+              rateFlex={rateFlex}
+              colorsSection={colorsSection}
+            />
+          </div>
+        ))}
+      </div>
+
+      {/* Second Row (renders only if items2 exists) */}
+      {Array.isArray(items2) && items2.length > 0 && (
+        <div className={rowClasses}>
+          {items2.map((item) => (
+            <div key={item.id} className="flex-shrink-0">
+              <CardComponent
+                {...item}
+                rateFlex={rateFlex}
+                colorsSection={colorsSection}
+              />
+            </div>
+          ))}
         </div>
-      ))}
+      )}
     </div>
   );
 }
