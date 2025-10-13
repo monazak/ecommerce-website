@@ -54,7 +54,7 @@ export default function SideBar({ isSidebarOpen, closeSidebar }) {
                   className="w-full text-left flex justify-between items-center px-0 py-1 font-medium hover:bg-gray-100 rounded-md transition"
                   onClick={() => category.items && toggleSection(category.key)}
                 >
-                  <span>{category.title}</span>
+                  <span><a href="">{category.title}</a></span>
                   {category.items && (
                     <i
                       className={`fa-solid fa-chevron-down text-sm transition-transform duration-200 ${
@@ -72,7 +72,8 @@ export default function SideBar({ isSidebarOpen, closeSidebar }) {
                         key={item}
                         className="hover:text-black cursor-pointer transition"
                       >
-                        {item}
+                        <a href="">{item}</a>
+                      
                       </li>
                     ))}
                   </ul>

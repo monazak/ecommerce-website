@@ -13,7 +13,7 @@ function Header({ cartCount = 0, onToggleSidebar }) {
 
 
   return (
-    <header className="sticky top-0 header-container relative flex justify-between items-center px-4 py-3 border-b md:px-[4%] lg:px-[9%] bg-white z-50">
+    <header className="sticky top-0 header-container relative flex justify-between items-center px-4 py-3 border-b md:px-[4%] lg:px-[9%] bg-white z-40">
       {/* === Left: Categories Button (Mobile) === */}
         <div className="flex gap-5">
         <button
@@ -71,7 +71,7 @@ function Header({ cartCount = 0, onToggleSidebar }) {
 
       {/* === Mobile Menu === */}
 <div
-  className={`absolute top-full w-full left-0 md:right-[4%] md:left-auto md:w-[200px] bg-black border text-white flex flex-col gap-3 lg:hidden z-20 transition-all duration-300 ease-in-out
+  className={`absolute top-full w-full left-0 md:right-[4%] md:left-auto md:w-[200px] bg-black border text-white flex flex-col gap-3 lg:hidden z-50 transition-all duration-300 ease-in-out
     ${isMenuOpen ? "opacity-100 translate-y-0 p-3 max-h-60" : "opacity-0 -translate-y-5 max-h-0 overflow-hidden"}
   `}
 >
