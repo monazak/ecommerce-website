@@ -19,7 +19,7 @@ function SectionHeader({
 }) {
   return (
     <>
-    <div className="section-header flex justify-between gap-3 md:gap-20 items-end mb-4 px-4 py-1 md:px-[4%] lg:px-[7%]">
+    <div className="section-header flex justify-between gap-3 md:gap-20 items-end mb-4 px-4 py-1 md:px-[4%] lg:px-[9%]">
         
 
         <h2 className=" text-lg md:text-2xl  font-bold">{title}</h2>

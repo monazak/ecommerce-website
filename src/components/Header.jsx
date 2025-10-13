@@ -13,28 +13,28 @@ function Header({ cartCount = 0, onToggleSidebar }) {
 
 
   return (
-    <header className=" header-container relative flex justify-between items-center px-4 py-3 border-b md:px-[4%] lg:px-[7%] bg-white z-30">
+    <header className="sticky top-0 header-container relative flex justify-between items-center px-4 py-3 border-b md:px-[4%] lg:px-[9%] bg-white z-50">
       {/* === Left: Categories Button (Mobile) === */}
-      <button
-        className="md:hidden flex items-center gap-1 text-sm hover:text-red-500"
-        onClick={onToggleSidebar}
-      >
-        <i className="fa-solid fa-circle-notch " ></i> 
+        <div className="flex gap-5">
+        <button
+          className="md:hidden flex items-center gap-1 text-sm hover:text-red-500"
+          onClick={onToggleSidebar}>
+          <i className="fa-solid fa-circle-notch " ></i> 
+        </button>
 
-        <span>Categories</span>
-      </button>
+        {/* === Logo === */}
+        <p className="logo  md:static md:translate-x-0 font-bold text-xl cursor-pointer">
+          Exclusive
+        </p>
+      </div>
 
-      {/* === Logo === */}
-      <p className="logo absolute -translate-x-1/2 left-1/2 md:static md:translate-x-0 font-bold text-xl">
-        Exclusive
-      </p>
 
       {/* === Desktop Nav === */}
-      <ul className="list-option hidden md:flex space-x-5 lg:space-x-8 text-sm lg:text-base">
-        <li>Home</li>
-        <li>Contact</li>
-        <li>About</li>
-        <li>SignUp</li>
+      <ul className="list-option hidden lg:flex space-x-5 lg:space-x-8 text-sm lg:text-base">
+        <li><a href="">Home</a> </li>
+        <li><a href="">Contact</a></li>
+        <li><a href="">About</a></li>
+        <li><a href="">SignUp</a></li>
       </ul>
 
       {/* === Right Side (Cart + Search) === */}
@@ -42,7 +42,7 @@ function Header({ cartCount = 0, onToggleSidebar }) {
         {/* Search only visible on md+ */}
         <div className="search-box hidden md:flex items-center w-64 border rounded-lg overflow-hidden">
           <input
-            className="search-input flex-1 px-2 py-1 text-sm focus:outline-none"
+            className="search-input flex-1 px-2 py-2 text-sm focus:outline-none"
             type="text"
             placeholder="What are you looking for?"
           />
@@ -62,7 +62,7 @@ function Header({ cartCount = 0, onToggleSidebar }) {
 
         {/* Mobile menu button (hamburger) */}
         <button
-          className="md:hidden ml-2"
+          className="lg:hidden ml-2"
           onClick={() => setIsMenuOpen(!isMenuOpen)}
         >
           <i className="fa-solid fa-bars text-xl hover:text-red-500"></i>
@@ -71,7 +71,7 @@ function Header({ cartCount = 0, onToggleSidebar }) {
 
       {/* === Mobile Menu === */}
 <div
-  className={`absolute top-full left-0 w-full bg-gray-300 border-b text-white flex flex-col gap-3 md:hidden z-20 transition-all duration-300 ease-in-out
+  className={`absolute top-full w-full left-0 md:right-[4%] md:left-auto md:w-[200px] bg-black border text-white flex flex-col gap-3 lg:hidden z-20 transition-all duration-300 ease-in-out
     ${isMenuOpen ? "opacity-100 translate-y-0 p-3 max-h-60" : "opacity-0 -translate-y-5 max-h-0 overflow-hidden"}
   `}
 >
@@ -79,23 +79,23 @@ function Header({ cartCount = 0, onToggleSidebar }) {
     {navItems.map((item) => (
       <li
         key={item.name}
-        className={`px-3 py-2 rounded transition cursor-pointer
-          hover:bg-gray-200 hover:text-red-500
+        className={`px-3 py-2 rounded transition cursor-pointer bg-red-500 text-white
+          hover:bg-white hover:text-red-500 hover:border-1
           ${window.location.pathname === item.path ? "bg-gray-200 text-red-500 font-semibold" : ""}`}
       >
-        {item.name}
+        <a href="">{item.name}</a>
       </li>
     ))}
   </ul>
 
-  <div className="flex items-center gap-2">
+  <div className=" md:hidden flex items-center gap-2">
     <div className="relative flex items-center w-full">
       <input
-        className="search-input w-full px-3 py-1.5 rounded bg-gray-200 text-white placeholder-gray-400 placeholder:text-[14px] focus:outline-none"
+        className="search-input pr-7 w-full px-3 py-1.5 rounded bg-white text-gray-500 text-[14px] md:bg-gray-200 placeholder-gray-400 placeholder:text-[14px] focus:outline-none "
         type="text"
         placeholder="What Are You Looking For?..."
       />
-      <i className="fa-solid fa-magnifying-glass absolute right-3 text-gray-300"></i>
+      <i className="fa-solid fa-magnifying-glass absolute right-2 text-gray-300"></i>
     </div>
   </div>
 </div>

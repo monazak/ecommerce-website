@@ -5,7 +5,7 @@ function TopHeader() {
   const [language, setLanguage] = useState('English');
 
   return (
-    <div className="top-header-container flex flex-row justify-between items-center px-4 py-2 mb-4  md:px-[4%] lg:px-[7%]">
+    <div className="top-header-container flex flex-row justify-between items-center px-4 py-2 mb-4  md:px-[4%] lg:px-[9%]">
       
       <p className=" md:text-center promo-text">
         Summer Sale For All Swim Suits And Free Express Delivery - OFF 50%! 

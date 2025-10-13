@@ -9,7 +9,7 @@ function NewArrivalContainer() {
   const smallProducts = [newArrivalSlides[2], newArrivalSlides[3]]; // speakers + perfume
 
   return (
-    <div className="flex flex-wrap gap-7 justify-center w-full  p-4  px-4 py-3 md:px-[4%] lg:px-[7%] ">
+    <div className="flex flex-wrap gap-7 justify-center w-full  p-4  px-4 py-3 md:px-[4%] lg:px-[9%] ">
       {/* Left Large Section */}
       <div className="w-full sm:w-[680px] bg-black">
         <NewArrivalSlide item={mainProduct} height="h-60 lg:h-[430px]" />

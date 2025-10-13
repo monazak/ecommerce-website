@@ -37,7 +37,7 @@ function ProductCard({
   };
 
   return (
-    <div className="product-card w-80  bg-white shadow-md rounded overflow-hidden relative group">
+    <div className="product-card w-80 border  bg-white shadow-lg rounded overflow-hidden relative group">
       <div className="bg-gray-100 flex justify-center items-center relative w-full h-80">
         {saleRatio && (
           <div className="absolute top-2 left-2 bg-red-500 text-white text-xs px-2 py-1 rounded z-10">

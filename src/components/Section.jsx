@@ -19,7 +19,7 @@ function Section({section, item, slide}) {
 
     if (item) {
      return (
-      <div className="section-container flex flex-col my-10 gap-2 r px-4 py-3 md:px-[4%] lg:px-[7%]">
+      <div className="section-container flex flex-col my-10 gap-2 r px-4 py-3 md:px-[4%] lg:px-[9%]">
         <Slide item={item} />
       </div>
          );

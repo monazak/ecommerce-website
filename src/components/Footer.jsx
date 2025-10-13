@@ -3,7 +3,7 @@ import FooterColumn from "./FooterColumn";
 
 function Footer() {
   return (
-    <footer className="bg-black text-white px-4 py-10 md:px-[4%] lg:px-[7%]">
+    <footer className="bg-black text-white px-4 py-10 md:px-[4%] lg:px-[9%]">
       <div
         className="
           flex flex-wrap justify-center md:justify-start gap-8 w-full

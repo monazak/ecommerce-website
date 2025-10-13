@@ -11,7 +11,7 @@ function ItemsContainer({
   rateFlex,
   colorsSection,
 }) {
-  let baseClasses = "px-4 py-3 md:px-[4%] lg:px-[7%]";
+  let baseClasses = "px-4 py-3 md:px-[4%] lg:px-[9%]";
   let rowClasses = "flex gap-10 justify-start";
 
   // ✅ Proper condition for row behavior
