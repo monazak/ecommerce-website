@@ -38,7 +38,7 @@ function ItemsContainer({
         ))}
       </div>
 
-      
+
       {Array.isArray(items2) && items2.length > 0 && (
         <div className={rowClasses}>
           {items2.map((item) => (

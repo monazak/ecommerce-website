@@ -26,7 +26,6 @@ function NewArrivalContainer() {
           />
         </div>
 
-     
         <div className="flex flex-col sm:flex-row flex-wrap gap-6">
           {smallProducts.map((item, index) => (
             <div

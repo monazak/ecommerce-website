@@ -8,7 +8,7 @@ export default function CategoryWithSlider({ isSidebarOpen, closeSidebar }) {
       <div className="flex px-5 md:gap-5 md:px-0 relative ">
 
         <div className="md:border-r py-4 ">
-        <SideBar isSidebarOpen={isSidebarOpen} closeSidebar={closeSidebar} />
+          <SideBar isSidebarOpen={isSidebarOpen} closeSidebar={closeSidebar} />
         </div>
 
         <main className="flex-1 py-4 ">

@@ -1,26 +1,21 @@
 // components/NewArrivalSlide.jsx
 import React from "react";
 
-function NewArrivalSlide({ item, height = "h-[200px]" , rightImage}) {
+function NewArrivalSlide({ item, height = "h-[200px]", rightImage }) {
   return (
     <a
       href={item.link || "#"}
-      className={`relative p-2 overflow-hidden shadow-lg group block flex ${
-      rightImage ? "justify-end " : "justify-center"
-    } items-center ${height}`}
+      className={`relative p-2 overflow-hidden shadow-lg group block flex ${rightImage ? "justify-end " : "justify-center"
+        } items-center ${height}`}
     >
-   
-
 
       <img
         src={item.src}
         alt={item.alt || item.title}
-className=" h-full transition-transform duration-500 group-hover:scale-110"
+        className=" h-full transition-transform duration-500 group-hover:scale-110"
       />
 
-
       <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
-
 
       <div className="absolute bottom-5 left-6 text-white">
         <h4 className="text-lg sm:text-xl font-bold">{item.title}</h4>

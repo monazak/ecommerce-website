@@ -32,9 +32,8 @@ function Countdown({ targetDate, variant = "circle" }) {
       {items.map((item, idx) => (
         <div
           key={item.label}
-          className={`flex flex-col items-center ${
-            variant === "minimal" ? "relative" : ""
-          }`}
+          className={`flex flex-col items-center ${variant === "minimal" ? "relative" : ""
+            }`}
         >
 
           {variant === "minimal" && (
@@ -48,7 +47,7 @@ function Countdown({ targetDate, variant = "circle" }) {
 
               {idx < items.length - 1 && (
                 <span className="text-red-500 text-lg font-bold mx-2 absolute right-[-14px] top-[40%]">
-                  : 
+                  :
                 </span>
               )}
             </>

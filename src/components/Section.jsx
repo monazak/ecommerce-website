@@ -3,9 +3,9 @@ import SectionName from './SectionName'
 import SectionHeader from './SectionHeader'
 import ItemsContainer from './ItemsContainer'
 import NewArrivalContainer from './NewArrivalContainer'
-import {products} from "./data/products.json";
-import {categories} from "./data/categories.json";
-import {features} from "./data/features.json";
+import { products } from "./data/products.json";
+import { categories } from "./data/categories.json";
+import { features } from "./data/features.json";
 
 import ProductCard from './ProductCard';
 import CategoryCard from './CategoryCard';
@@ -15,85 +15,85 @@ import Slide from './Slide'
 import Button from './Button'
 
 
-function Section({section, item, slide}) {
+function Section({ section, item, slide }) {
 
-    if (item) {
-     return (
+  if (item) {
+    return (
       <div className="section-container flex flex-col my-10 gap-2 r px-4 py-3 md:px-[4%] lg:px-[9%]">
         <Slide item={item} />
       </div>
-         );
-    }
-    if (!section) return null;
+    );
+  }
+  if (!section) return null;
 
-    let sectionItems=[]
-    let sectionItems2=[]
-    let CardComponent = ProductCard;
-    
-    switch (section.id){
-      
-        case 'browseByCategory':
-            sectionItems = section.array
-                .map(id => categories.find(c => c.id === id))
-                .filter(item => item); // remove undefined if not found
-                CardComponent=CategoryCard
-                break;
-        case 'featured':
-            sectionItems = section.array
-                .map(id => features.find(f => f.id === id))
-                .filter(item => item);
-                CardComponent= FeatureCard
-            break;
+  let sectionItems = []
+  let sectionItems2 = []
+  let CardComponent = ProductCard;
 
-        case 'ourProducts':
-            sectionItems = section.array
-                .map(id => products.find(o => o.id === id))
-                .filter(item => item).splice(0,4)
-                
-              sectionItems2=section.array2
-                .map(id => products.find(o => o.id === id))
-                .filter(item => item).splice(0,4),
-              CardComponent= ProductCard  
-            break;
+  switch (section.id) {
 
-        default :   
-            sectionItems = section.array
-                .map(id => products.find(f => f.id === id))
-                .filter(item => item)
-                CardComponent=ProductCard
-    }
+    case 'browseByCategory':
+      sectionItems = section.array
+        .map(id => categories.find(c => c.id === id))
+        .filter(item => item); // remove undefined if not found
+      CardComponent = CategoryCard
+      break;
+    case 'featured':
+      sectionItems = section.array
+        .map(id => features.find(f => f.id === id))
+        .filter(item => item);
+      CardComponent = FeatureCard
+      break;
+
+    case 'ourProducts':
+      sectionItems = section.array
+        .map(id => products.find(o => o.id === id))
+        .filter(item => item).splice(0, 4)
+
+      sectionItems2 = section.array2
+        .map(id => products.find(o => o.id === id))
+        .filter(item => item).splice(0, 4),
+        CardComponent = ProductCard
+      break;
+
+    default:
+      sectionItems = section.array
+        .map(id => products.find(f => f.id === id))
+        .filter(item => item)
+      CardComponent = ProductCard
+  }
 
   return (
-  
+
     <div className='flex flex-col justify-center  gap-5' >
-        <div className='section-container flex flex-col  my-10 gap-5'>
-          <SectionName name={section.label} />
-            <SectionHeader
-            title={section.title} 
-            showTimer={section.showTimer} 
-            timerData={section.timerData} 
-            showArrows={section.showArrows}
-            headerButton={section.headerButton}
-            buttonText={section.buttonText}
-            variant={section.variant}
-            />
+      <div className='section-container flex flex-col  my-10 gap-5'>
+        <SectionName name={section.label} />
+        <SectionHeader
+          title={section.title}
+          showTimer={section.showTimer}
+          timerData={section.timerData}
+          showArrows={section.showArrows}
+          headerButton={section.headerButton}
+          buttonText={section.buttonText}
+          variant={section.variant}
+        />
 
-            {slide === 'NewArrivalContainer' && <NewArrivalContainer />}
+        {slide === 'NewArrivalContainer' && <NewArrivalContainer />}
 
-            <ItemsContainer 
-            horizontal={section.horizontal}
-            items={sectionItems}
-            items2={sectionItems2}
-            CardComponent={CardComponent}
-            rateFlex={section.rateFlex}
-            colorsSection={section.colorsSection}
-            />
-        </div>
-        <div className='flex justify-center'>
-          {section.bottomButton && <Button text={section.buttonText}/>}
-        </div>
-        
-    
+        <ItemsContainer
+          horizontal={section.horizontal}
+          items={sectionItems}
+          items2={sectionItems2}
+          CardComponent={CardComponent}
+          rateFlex={section.rateFlex}
+          colorsSection={section.colorsSection}
+        />
+      </div>
+      <div className='flex justify-center'>
+        {section.bottomButton && <Button text={section.buttonText} />}
+      </div>
+
+
     </div>
   )
 }

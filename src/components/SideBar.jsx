@@ -1,5 +1,5 @@
 import React, { useState } from "react";
- 
+
 export default function SideBar({ isSidebarOpen, closeSidebar }) {
   const [openSection, setOpenSection] = useState(null);
 
@@ -29,7 +29,7 @@ export default function SideBar({ isSidebarOpen, closeSidebar }) {
 
   return (
     <>
-      
+
       {isSidebarOpen && (
         <div
           className="fixed inset-0 bg-black/50 z-40 md:hidden"
@@ -49,7 +49,7 @@ export default function SideBar({ isSidebarOpen, closeSidebar }) {
           <ul className="flex flex-col gap-2  text-gray-800">
             {categories.map((category) => (
               <li key={category.title}>
-      
+
                 <button
                   className="w-full text-left flex justify-between items-center px-0 py-1 font-medium hover:bg-gray-100 rounded-md transition"
                   onClick={() => category.items && toggleSection(category.key)}
@@ -57,14 +57,13 @@ export default function SideBar({ isSidebarOpen, closeSidebar }) {
                   <span><a href="">{category.title}</a></span>
                   {category.items && (
                     <i
-                      className={`fa-solid fa-chevron-down text-sm transition-transform duration-200 ${
-                        openSection === category.key ? "rotate-0" : "-rotate-90"
-                      }`}
+                      className={`fa-solid fa-chevron-down text-sm transition-transform duration-200 ${openSection === category.key ? "rotate-0" : "-rotate-90"
+                        }`}
                     />
                   )}
                 </button>
 
-         
+
                 {category.items && openSection === category.key && (
                   <ul className="pl-6 mt-1 space-y-1 text-sm text-gray-600 animate-fadeIn">
                     {category.items.map((item) => (
@@ -73,7 +72,7 @@ export default function SideBar({ isSidebarOpen, closeSidebar }) {
                         className="hover:text-black cursor-pointer transition"
                       >
                         <a href="">{item}</a>
-                      
+
                       </li>
                     ))}
                   </ul>
@@ -83,7 +82,7 @@ export default function SideBar({ isSidebarOpen, closeSidebar }) {
           </ul>
         </div>
 
-  
+
         <button
           onClick={closeSidebar}
           className="md:hidden absolute bottom-4 right-4 text-gray-500 hover:text-black transition"

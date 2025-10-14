@@ -7,34 +7,34 @@ import Button from "./Button";
 
 
 function SectionHeader({
-  title,           
+  title,
   showTimer = true,
-  timerData=  new Date(2025, 25, 10, 23, 59, 59),
-  showArrows = true, 
-  onPrev,           
+  timerData = new Date(2025, 25, 10, 23, 59, 59),
+  showArrows = true,
+  onPrev,
   onNext,
   headerButton,
   buttonText,
-  variant,        
+  variant,
 }) {
   return (
     <>
-    <div className="section-header flex justify-between gap-3 md:gap-20 items-end mb-4 px-4 py-1 md:px-[4%] lg:px-[9%]">
-        
+      <div className="section-header flex justify-between gap-3 md:gap-20 items-end mb-4 px-4 py-1 md:px-[4%] lg:px-[9%]">
+
 
         <h2 className=" text-lg md:text-2xl  font-bold">{title}</h2>
 
-       {showTimer && timerData && (
+        {showTimer && timerData && (
           <div className="flex-1  ">
-              <Countdown targetDate={timerData} variant={variant} />
+            <Countdown targetDate={timerData} variant={variant} />
           </div>
         )}
 
-      {headerButton && (<Button text={buttonText} /> )}
-      {showArrows && (<Arrows onPrev={onPrev} onNext={onNext} /> )}
+        {headerButton && (<Button text={buttonText} />)}
+        {showArrows && (<Arrows onPrev={onPrev} onNext={onNext} />)}
 
-    </div>
-      
+      </div>
+
     </>
   );
 }

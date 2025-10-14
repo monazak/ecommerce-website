@@ -6,7 +6,7 @@ function ProductCard({
   name,
   price,
   oldPrice,
-  rating, 
+  rating,
   reviews,
   saleRatio,
   colors,
@@ -16,7 +16,7 @@ function ProductCard({
 
 }) {
   const [expanded, setExpanded] = useState(false);
-  
+
   // Function to render star icons based on rating
   const renderStars = (rating) => {
     const stars = [];
@@ -43,8 +43,8 @@ function ProductCard({
           <div className="absolute top-2 left-2 bg-red-500 text-white text-xs px-2 py-1 rounded z-10">
             -{saleRatio}%
           </div>
-        )} 
-         {newArrival && (
+        )}
+        {newArrival && (
           <div className="absolute top-2 left-2 bg-green-400 text-white text-xs px-2 py-1 rounded z-10">
             new
           </div>
@@ -79,47 +79,47 @@ function ProductCard({
           <h3 className={`text-sm font-medium ${!expanded ? "truncate" : ''}`}>{name}</h3>
         </div>
 
-      {rateFlex && 
-      <div className="flex flex-col "> 
-          <div className="flex justify-betwwen gap-3">
-            <span className="text-base font-bold">${price}</span>
-            <div className="flex items-center gap-1">
-              {renderStars(rating)}
+        {rateFlex &&
+          <div className="flex flex-col ">
+            <div className="flex justify-betwwen gap-3">
+              <span className="text-base font-bold">${price}</span>
+              <div className="flex items-center gap-1">
+                {renderStars(rating)}
+              </div>
+              <span className="text-gray-500">({reviews})</span>
             </div>
-            <span className="text-gray-500">({reviews})</span>
-          </div>
-        {colorsSection && colors && colors.length >0 &&
-    
-           <div className="flex gap-2 mt-2">
-        {colors.map((color, index) => (
-          <span
-            key={index}
-            className={`h-5 w-5 rounded-full border border-gray-300`}
-            style={{ backgroundColor: color }}
-          ></span>
-        ))}
-      </div>
-      
-        }  
-      </div>
-     
-      }
-      {!rateFlex && 
-      <> <div className="flex gap-2 items-center">
-          <span className="text-base font-bold">${price}</span>
-          {oldPrice && (
-            <span className="text-xs line-through text-gray-500">${oldPrice}</span>
-          )}
-        </div>
+            {colorsSection && colors && colors.length > 0 &&
 
-        <div className="flex items-center gap-2 text-xs text-gray-600">
-          <div className="flex items-center gap-1">
-            {renderStars(rating)}
+              <div className="flex gap-2 mt-2">
+                {colors.map((color, index) => (
+                  <span
+                    key={index}
+                    className={`h-5 w-5 rounded-full border border-gray-300`}
+                    style={{ backgroundColor: color }}
+                  ></span>
+                ))}
+              </div>
+
+            }
           </div>
-          <span className="text-gray-500">({reviews})</span>
-        </div></>
-      }
-       
+
+        }
+        {!rateFlex &&
+          <> <div className="flex gap-2 items-center">
+            <span className="text-base font-bold">${price}</span>
+            {oldPrice && (
+              <span className="text-xs line-through text-gray-500">${oldPrice}</span>
+            )}
+          </div>
+
+            <div className="flex items-center gap-2 text-xs text-gray-600">
+              <div className="flex items-center gap-1">
+                {renderStars(rating)}
+              </div>
+              <span className="text-gray-500">({reviews})</span>
+            </div></>
+        }
+
       </div>
     </div>
   );

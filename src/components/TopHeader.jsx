@@ -1,4 +1,4 @@
-import  { useState } from 'react';
+import { useState } from 'react';
 import './TopHeader.css';
 
 function TopHeader() {
@@ -6,9 +6,9 @@ function TopHeader() {
 
   return (
     <div className="top-header-container flex flex-row justify-between items-center px-4 py-2 mb-4  md:px-[4%] lg:px-[9%]">
-      
+
       <p className=" md:text-center promo-text">
-        Summer Sale For All Swim Suits And Free Express Delivery - OFF 50%! 
+        Summer Sale For All Swim Suits And Free Express Delivery - OFF 50%!
         <a href='/' className="shop-now">ShopNow</a>
       </p>
 

@@ -3,10 +3,10 @@ import FooterColumn from "./FooterColumn";
 
 function Footer() {
   return (
-    <footer className="bg-black text-white px-4 py-10 md:px-[4%] lg:px-[9%]">
+    <footer className="bg-black  text-white px-4 py-10 md:px-[4%] lg:px-[9%]">
       <div
         className="
-          flex flex-wrap justify-center md:justify-start gap-8 w-full
+          flex flex-wrap  md:justify-start gap-8 w-full
           max-w-7xl mx-auto
         "
       >
@@ -14,8 +14,8 @@ function Footer() {
           <div
             key={idx}
             className="
-              flex-1 min-w-[180px] md:min-w-[200px] lg:min-w-[220px]
-              max-w-[260px]
+              flex-1  lg:min-w-[220px]
+              max-w-[200px]
             "
           >
             <FooterColumn
@@ -108,13 +108,13 @@ function Footer() {
               )}
             </FooterColumn>
           </div>
-          
+
         ))}
       </div>
-        <div className="flex justify-center mt-10 text-gray-400 ">
+      <div className="flex justify-center mt-10 text-gray-400 ">
         <i className="fa-regular fa-copyright"></i>
         <p className="text-xs  ">Copyright Rimel 2022. All right reserved</p>
-        </div>
+      </div>
 
     </footer>
   );

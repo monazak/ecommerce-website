@@ -26,9 +26,8 @@ export default function ImageSlider() {
       {slides.map((item, i) => (
         <div
           key={i}
-          className={`absolute inset-0 transition-opacity duration-700 ${
-            i === index ? 'opacity-100 z-10' : 'opacity-0 z-0 pointer-events-none'
-          }`}
+          className={`absolute inset-0 transition-opacity duration-700 ${i === index ? 'opacity-100 z-10' : 'opacity-0 z-0 pointer-events-none'
+            }`}
         >
           <div className="w-full h-full p-4 box-border  flex justify-center">
             <div className="w-full h-full  rounded-xl flex items-center justify-center ">
