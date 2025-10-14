@@ -1,10 +1,12 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
+import Login from "./pages/Login";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import TopHeader from './components/TopHeader'
 import {useState} from 'react'
-import React from "react";
+
+
 
 export default function App() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -20,6 +22,7 @@ export default function App() {
         <main className="flex-1">
           <Routes>
             <Route path="/" element={<Home isSidebarOpen={isSidebarOpen} closeSidebar={closeSidebar} />} />
+            <Route path="/login" element={<Login />} />
           </Routes>
         </main>
         <Footer/>
