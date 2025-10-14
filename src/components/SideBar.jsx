@@ -29,7 +29,7 @@ export default function SideBar({ isSidebarOpen, closeSidebar }) {
 
   return (
     <>
-      {/* === Overlay for mobile === */}
+      
       {isSidebarOpen && (
         <div
           className="fixed inset-0 bg-black/50 z-40 md:hidden"
@@ -37,7 +37,7 @@ export default function SideBar({ isSidebarOpen, closeSidebar }) {
         ></div>
       )}
 
-      {/* === Sidebar === */}
+
       <nav
         className={`
           fixed top-0 left-0 h-full w-64 bg-white shadow-lg transform transition-transform duration-300 ease-in-out z-50
@@ -49,7 +49,7 @@ export default function SideBar({ isSidebarOpen, closeSidebar }) {
           <ul className="flex flex-col gap-2  text-gray-800">
             {categories.map((category) => (
               <li key={category.title}>
-                {/* === Main Category Button === */}
+      
                 <button
                   className="w-full text-left flex justify-between items-center px-0 py-1 font-medium hover:bg-gray-100 rounded-md transition"
                   onClick={() => category.items && toggleSection(category.key)}
@@ -64,7 +64,7 @@ export default function SideBar({ isSidebarOpen, closeSidebar }) {
                   )}
                 </button>
 
-                {/* === Dropdown Items === */}
+         
                 {category.items && openSection === category.key && (
                   <ul className="pl-6 mt-1 space-y-1 text-sm text-gray-600 animate-fadeIn">
                     {category.items.map((item) => (
@@ -83,7 +83,7 @@ export default function SideBar({ isSidebarOpen, closeSidebar }) {
           </ul>
         </div>
 
-        {/* === Close Button (Mobile Only) === */}
+  
         <button
           onClick={closeSidebar}
           className="md:hidden absolute bottom-4 right-4 text-gray-500 hover:text-black transition"

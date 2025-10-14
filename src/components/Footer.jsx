@@ -23,7 +23,7 @@ function Footer() {
               logo={col.content.logo}
               stretch={idx === footerData.length - 1}
             >
-              {/* Subscribe Column */}
+
               {col.type === "subscribe" && (
                 <>
                   <p className="text-xs mb-4">{col.content.text}</p>
@@ -41,7 +41,7 @@ function Footer() {
                 </>
               )}
 
-              {/* Text Column */}
+
               {col.type === "text" &&
                 col.content.map((line, i) => (
                   <p key={i} className="text-sm mb-1">
@@ -49,7 +49,6 @@ function Footer() {
                   </p>
                 ))}
 
-              {/* Links Column */}
               {col.type === "links" &&
                 col.content.map((link, i) => (
                   <a
@@ -61,7 +60,7 @@ function Footer() {
                   </a>
                 ))}
 
-              {/* App Column */}
+
               {col.type === "app" && (
                 <>
                   <p className="text-[10px] text-gray-400 mb-3">
@@ -69,7 +68,7 @@ function Footer() {
                   </p>
 
                   <div className="flex gap-2 mb-3">
-                    {/* QR */}
+
                     <div className="w-[80px] h-[80px] flex-shrink-0">
                       <img
                         src={col.content.qrSrc}
@@ -78,7 +77,7 @@ function Footer() {
                       />
                     </div>
 
-                    {/* Store Links */}
+
                     <div className="flex flex-col gap-2 flex-shrink-0 no-wrap">
                       {col.content.stores.map((store, i) => (
                         <div
@@ -97,7 +96,6 @@ function Footer() {
                     </div>
                   </div>
 
-                  {/* Social Icons */}
                   <div className="flex justify-center gap-10  text-lg mt-2">
                     {col.content.socialIcons.map((icon, i) => (
                       <i

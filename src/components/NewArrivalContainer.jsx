@@ -10,16 +10,14 @@ function NewArrivalContainer() {
 
   return (
     <div className="flex flex-col lg:flex-row flex-wrap gap-6 justify-center w-full px-4 py-6 md:px-8 lg:px-[9%]">
-      
-      {/* Left Large Section */}
+
       <div className="flex-1 min-w-[300px] lg:min-w-[45%] bg-black">
         <NewArrivalSlide item={mainProduct} height="h-60 sm:h-72 md:h-[350px] lg:h-[430px]" />
       </div>
 
-      {/* Right Section */}
+
       <div className="flex-1 min-w-[300px] lg:min-w-[45%] flex flex-col gap-6">
-        
-        {/* Top Medium Card */}
+
         <div className="bg-black">
           <NewArrivalSlide
             item={topRightProduct}
@@ -28,7 +26,7 @@ function NewArrivalContainer() {
           />
         </div>
 
-        {/* Bottom Two Smaller Cards */}
+     
         <div className="flex flex-col sm:flex-row flex-wrap gap-6">
           {smallProducts.map((item, index) => (
             <div

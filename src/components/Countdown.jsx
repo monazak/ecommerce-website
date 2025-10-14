@@ -36,7 +36,7 @@ function Countdown({ targetDate, variant = "circle" }) {
             variant === "minimal" ? "relative" : ""
           }`}
         >
-          {/* ====== MINIMAL STYLE ====== */}
+
           {variant === "minimal" && (
             <>
               <span className="text-[10px] md:text-xs text-gray-600 mb-1">
@@ -45,7 +45,7 @@ function Countdown({ targetDate, variant = "circle" }) {
               <div className="text-black font-bold text-sm md:text-lg">
                 {String(item.value).padStart(2, "0")}
               </div>
-              {/* Colon between times */}
+
               {idx < items.length - 1 && (
                 <span className="text-red-500 text-lg font-bold mx-2 absolute right-[-14px] top-[40%]">
                   : 
@@ -54,7 +54,7 @@ function Countdown({ targetDate, variant = "circle" }) {
             </>
           )}
 
-          {/* ====== CIRCLE STYLE ====== */}
+
           {variant === "circle" && (
             <div className="bg-white text-black w-12 h-12 md:w-14 md:h-14 rounded-full flex flex-col items-center justify-center font-bold text-[10px] md:text-xs leading-tight">
               <span className="text-sm md:text-base">

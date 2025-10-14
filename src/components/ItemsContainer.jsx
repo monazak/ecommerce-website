@@ -25,7 +25,7 @@ function ItemsContainer({
 
   return (
     <div className={`flex flex-col gap-10 ${baseClasses}`}>
-      {/* First Row */}
+
       <div className={rowClasses}>
         {items.map((item) => (
           <div key={item.id} className="flex-shrink-0">
@@ -38,7 +38,7 @@ function ItemsContainer({
         ))}
       </div>
 
-      {/* Second Row (renders only if items2 exists) */}
+      
       {Array.isArray(items2) && items2.length > 0 && (
         <div className={rowClasses}>
           {items2.map((item) => (
