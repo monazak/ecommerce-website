@@ -7,6 +7,7 @@ import Footer from "./components/Footer";
 import TopHeader from './components/TopHeader'
 import {useState} from 'react'
 import Checkout from "./pages/Checkout";
+import ProductDetailes from "./pages/ProductDetailes";
 
 
 
@@ -27,6 +28,7 @@ export default function App() {
             <Route path="/login" element={<Login />} />
             <Route path="/cart" element={<Cart />} />
             <Route path="/checkout" element={<Checkout />} />
+            <Route path="/productDetailes" element={<ProductDetailes />} />
           </Routes>
         </main>
         <Footer/>

@@ -66,7 +66,7 @@ function Section({ section, item, slide }) {
   return (
 
     <div className='flex flex-col justify-center  gap-5' >
-      <div className='section-container flex flex-col  my-10 gap-5'>
+      <div className='section-container flex flex-col  my-10 gap-5 px-4 py-10 md:px-[4%] lg:px-[9%] '>
         <SectionName name={section.label} />
         <SectionHeader
           title={section.title}

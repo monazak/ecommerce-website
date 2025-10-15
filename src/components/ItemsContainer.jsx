@@ -11,10 +11,10 @@ function ItemsContainer({
   rateFlex,
   colorsSection,
 }) {
-  let baseClasses = "px-4 py-3 md:px-[4%] lg:px-[9%]";
+  let baseClasses = "";
   let rowClasses = "flex gap-10 justify-start";
 
-  // ✅ Proper condition for row behavior
+
   if (CardComponent === ProductCard || CardComponent === CategoryCard) {
     rowClasses += horizontal
       ? " overflow-x-auto no-scrollbar "
