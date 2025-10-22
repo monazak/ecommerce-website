@@ -1,11 +1,12 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 function Cart() {
   return (
     <div className="cart-container px-4 py-8 md:px-[4%] lg:px-[9%] min-h-screen">
       {/* === Breadcrumb === */}
-      <p className="text-gray-600 text-sm mb-6 flex">
-        <a href=""> Home / </a>  <span className="text-gray-900 font-medium"><a href=""> Cart </a></span>
+      <p className="text-gray-600 text-sm mb-6 flex hover:text-red-500">
+        <Link to='/'> Home / </Link>  <span className="text-gray-900 font-medium"><a href=""> Cart </a></span>
       </p>
 
       {/* === Cart Table === */}

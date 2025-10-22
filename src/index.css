@@ -13,3 +13,8 @@
   -ms-overflow-style: none;  /* IE and Edge */
   scrollbar-width: none;  /* Firefox */
 }
+/**
+a.active {
+  border-bottom: 2px solid rgb(0, 0, 0);
+}
+**/

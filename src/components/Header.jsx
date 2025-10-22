@@ -1,4 +1,6 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 function Header({ cartCount = 0, onToggleSidebar }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -6,11 +8,18 @@ function Header({ cartCount = 0, onToggleSidebar }) {
 
   const navItems = [
     { name: "Home", path: "/" },
-    { name: "Contact", path: "/contact" },
-    { name: "About", path: "/about" },
-    { name: "SignUp", path: "/signup" },
+    { name: "Contact", path: "/Contact" },
+    { name: "About", path: "/About" }, 
+    { name: "login", path: "/Login" },
   ];
 
+  const navLinkStyle = ({ isActive }) => {
+    return {
+      fontWeight: isActive ? "bold" : "normal",
+      borderBottom: isActive ? "2px solid black" : "none",
+      paddingBottom: isActive ? "2px" : "0",
+    };
+}
 
   return (
     <header className="sticky top-0 header-container relative flex justify-between items-center px-4 py-3 border-b md:px-[4%] lg:px-[9%] bg-white z-40">
@@ -31,10 +40,10 @@ function Header({ cartCount = 0, onToggleSidebar }) {
 
 
       <ul className="list-option hidden lg:flex space-x-5 lg:space-x-8 text-sm lg:text-base">
-        <li><a href="">Home</a> </li>
-        <li><a href="">Contact</a></li>
-        <li><a href="">About</a></li>
-        <li><a href="">SignUp</a></li>
+        <li><NavLink to="/" style={navLinkStyle}>Home</NavLink></li>
+        <li><NavLink to="/Contact" style={navLinkStyle}>Contact</NavLink></li>
+        <li><NavLink to="/About" style={navLinkStyle}>About</NavLink></li>
+        <li><NavLink to="/Login" style={navLinkStyle}>Login</NavLink></li>
       </ul>
 
 
@@ -51,9 +60,13 @@ function Header({ cartCount = 0, onToggleSidebar }) {
 
 
         <div className="cart-icon flex items-center gap-3">
-          <i className="fa-regular fa-heart text-lg hover:text-red-500"></i>
+          <Link to='/Favorite'>
+            <i className="fa-regular fa-heart text-lg hover:text-red-500"></i>
+          </Link>
           <div className="relative">
-            <i className="fa-solid fa-cart-shopping text-lg hover:text-red-500"></i>
+            <Link to ='/Cart'>
+              <i className="fa-solid fa-cart-shopping text-lg hover:text-red-500"></i>
+            </Link>
             <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs rounded-full w-4 h-4 flex items-center justify-center">
               {cartCount}
             </span>
@@ -74,19 +87,25 @@ function Header({ cartCount = 0, onToggleSidebar }) {
         className={`absolute top-full w-full left-0 md:right-[4%] md:left-auto md:w-[200px] bg-black border text-white flex flex-col gap-3 lg:hidden z-50 transition-all duration-300 ease-in-out
     ${isMenuOpen ? "opacity-100 translate-y-0 p-3 max-h-60" : "opacity-0 -translate-y-5 max-h-0 overflow-hidden"}
   `}
-      >
-        <ul className="flex flex-col gap-2 text-sm">
-          {navItems.map((item) => (
-            <li
-              key={item.name}
-              className={`px-3 py-2 rounded transition cursor-pointer bg-red-500 text-white
-          hover:bg-white hover:text-red-500 hover:border-1
-          ${window.location.pathname === item.path ? "bg-gray-200 text-red-500 font-semibold" : ""}`}
+      > 
+      <ul className="flex flex-col gap-2 text-sm">
+        {navItems.map((item) => (
+          <li key={item.name}>
+            <NavLink
+              to={item.path}
+              className={({ isActive }) =>
+                `block px-3 py-2 rounded transition cursor-pointer 
+                ${isActive 
+                  ? "bg-white text-red-500 font-semibold border border-red-500"
+                  : "bg-red-500 text-white hover:bg-white hover:text-red-500 hover:border hover:border-red-500"
+                }`
+              }
             >
-              <a href="">{item.name}</a>
-            </li>
-          ))}
-        </ul>
+              {item.name}
+            </NavLink>
+          </li>
+        ))}
+      </ul>
 
         <div className=" md:hidden flex items-center gap-2">
           <div className="relative flex items-center w-full">
