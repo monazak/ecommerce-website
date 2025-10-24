@@ -2,6 +2,7 @@ import React from "react";
 import ItemsContainer from "../components/ItemsContainer";
 import SectionName from "../components/SectionName";
 import { products } from "../components/data/products.json";
+
 import ProductCard from "../components/ProductCard";
 
 function ProductDetailes() {

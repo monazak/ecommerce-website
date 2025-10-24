@@ -1,9 +1,10 @@
-import React from 'react'
+import {useState, useEffect} from 'react'
 import SectionName from './SectionName'
 import SectionHeader from './SectionHeader'
 import ItemsContainer from './ItemsContainer'
 import NewArrivalContainer from './NewArrivalContainer'
-import { products } from "./data/products.json";
+import { fetchProducts } from "../api/fakeStoreAPI";
+
 import { categories } from "./data/categories.json";
 import { features } from "./data/features.json";
 
@@ -16,6 +17,27 @@ import Button from './Button'
 
 
 function Section({ section, item, slide }) {
+  
+  const [products, setProducts] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+    useEffect(() => {
+    const getProducts = async () => {
+      try {
+        const data = await fetchProducts();
+        setProducts(data);
+      } catch (error) {
+        console.error("Error fetching products:", error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    getProducts();
+  }, []);
+
+  if (loading) return <p className="text-center py-10">Loading products...</p>;
+
 
   if (item) {
     return (

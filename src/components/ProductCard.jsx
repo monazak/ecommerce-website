@@ -1,40 +1,47 @@
-// src/components/ProductCard.jsx
 import { useState } from "react";
 
 function ProductCard({
-  image,
-  name,
+ image,
   price,
   oldPrice,
-  rating,
-  reviews,
+  rating = 0,
+  reviews = 0,
   saleRatio,
   colors,
-  rateFlex,
-  colorsSection,
+  rateFlex = true,
+  colorsSection = false,
   newArrival,
+  title,
+  category,
 
 }) {
+  const rate = rating?.rate || 0;
+  const count = rating?.count || 0;
   const [expanded, setExpanded] = useState(false);
 
-  // Function to render star icons based on rating
-  const renderStars = (rating) => {
-    const stars = [];
-    const fullStars = Math.floor(rating);
-    const hasHalfStar = rating - fullStars >= 0.5;
+  console.log(category)
 
-    for (let i = 0; i < fullStars; i++) {
-      stars.push(<img key={i} src="/star-full.png" alt="star" className="w-4 h-4" />);
-    }
-    if (hasHalfStar) {
-      stars.push(<img key="half" src="/star-half.png" alt="half star" className="w-4 h-4" />);
-    }
-    const emptyStars = 5 - stars.length;
-    for (let i = 0; i < emptyStars; i++) {
-      stars.push(<img key={i + fullStars + 1} src="/star-empty.png" alt="empty star" className="w-4 h-4" />);
-    }
-    return stars;
-  };
+  const renderStars = (rate) => {
+  const rating = Number(rate) || 0; // Ensure it's always a number
+  const stars = [];
+  const fullStars = Math.floor(rating);
+  const hasHalfStar = rating - fullStars >= 0.5;
+
+  for (let i = 0; i < fullStars; i++) {
+    stars.push(<img key={`full-${i}`} src="/star-full.png" alt="star" className="w-4 h-4" />);
+  }
+  if (hasHalfStar) {
+    stars.push(<img key={`half`} src="/star-half.png" alt="half star" className="w-4 h-4" />);
+  }
+
+  const emptyStars = 5 - stars.length;
+  for (let i = 0; i < emptyStars; i++) {
+    stars.push(<img key={`empty-${i}`} src="/star-empty.png" alt="empty star" className="w-4 h-4" />);
+  }
+
+  return stars;
+};
+
 
   return (
     <div className="product-card w-72 md:w-80 border  bg-white shadow-lg rounded overflow-hidden relative group">
@@ -53,7 +60,7 @@ function ProductCard({
         <div className="image-container w-56 h-56">
           <img
             src={image}
-            alt={name}
+            alt={title}
             className="object-cover w-full h-full flex justify-center items-center rounded"
           />
         </div>
@@ -76,7 +83,7 @@ function ProductCard({
 
       <div className="p-3 flex flex-col gap-1 h-24">
         <div className="w-full pr-4 cursor-pointer" onClick={() => setExpanded(!expanded)}>
-          <h3 className={`text-sm font-medium ${!expanded ? "truncate" : ''}`}>{name}</h3>
+          <h3 className={`text-sm font-medium ${!expanded ? "truncate" : ''}`}>{title}</h3>
         </div>
 
         {rateFlex &&
@@ -84,9 +91,9 @@ function ProductCard({
             <div className="flex justify-betwwen gap-3">
               <span className="text-base font-bold">${price}</span>
               <div className="flex items-center gap-1">
-                {renderStars(rating)}
+                {renderStars(rate)}
               </div>
-              <span className="text-gray-500">({reviews})</span>
+              <span className="text-gray-500">({count})</span>
             </div>
             {colorsSection && colors && colors.length > 0 &&
 
