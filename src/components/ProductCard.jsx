@@ -1,6 +1,8 @@
 import { useState } from "react";
+import { useCart } from "../context/CartContext";
 
 function ProductCard({
+  id,
  image,
   price,
   oldPrice,
@@ -18,7 +20,7 @@ function ProductCard({
   const rate = rating?.rate || 0;
   const count = rating?.count || 0;
   const [expanded, setExpanded] = useState(false);
-
+  const { addToCart } = useCart();
   console.log(category)
 
   const renderStars = (rate) => {
@@ -66,7 +68,15 @@ function ProductCard({
         </div>
 
         <div className="absolute inset-0 bg-black bg-opacity-25 flex justify-center items-end opacity-0 group-hover:opacity-100 transition-opacity">
-          <button className="bg-black text-white px-4 py-3 rounded w-full">
+          <button
+            className="bg-black text-white px-4 py-3 rounded w-full"
+            onClick={() => addToCart({
+              id,
+              name: title,    
+              price,
+              image,          
+            })}
+          >
             Add to Cart
           </button>
         </div>

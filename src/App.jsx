@@ -8,7 +8,7 @@ import TopHeader from './components/TopHeader'
 import {useState} from 'react'
 import Checkout from "./pages/Checkout";
 import ProductDetailes from "./pages/ProductDetailes";
-
+import { CartProvider } from "./context/CartContext";
 
 
 export default function App() {
@@ -19,6 +19,7 @@ export default function App() {
 
   return (
     <Router>
+      <CartProvider>  
       <div className="min-h-screen flex flex-col ">
         <TopHeader/>
         <Header cartCount={0} onToggleSidebar={toggleSidebar} />
@@ -33,6 +34,7 @@ export default function App() {
         </main>
         <Footer/>
       </div>
+      </CartProvider>
     </Router>
   );
 }

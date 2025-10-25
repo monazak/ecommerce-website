@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { NavLink } from "react-router-dom";
-
-function Header({ cartCount = 0, onToggleSidebar }) {
+import { useCart } from "../context/CartContext";
+function Header({ onToggleSidebar }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
 
@@ -19,7 +19,12 @@ function Header({ cartCount = 0, onToggleSidebar }) {
       borderBottom: isActive ? "2px solid black" : "none",
       paddingBottom: isActive ? "2px" : "0",
     };
-}
+  }
+
+  const { cart } = useCart();
+  const cartCount = cart.reduce((total, item) => total + item.quantity, 0);
+
+
 
   return (
     <header className="sticky top-0 header-container relative flex justify-between items-center px-4 py-3 border-b md:px-[4%] lg:px-[9%] bg-white z-40">
@@ -33,7 +38,7 @@ function Header({ cartCount = 0, onToggleSidebar }) {
 
 
         <p className="logo  md:static md:translate-x-0 font-bold text-xl cursor-pointer">
-          Exclusive
+         <Link to="/">Exclusive</Link> 
         </p>
       </div>
 
@@ -65,9 +70,9 @@ function Header({ cartCount = 0, onToggleSidebar }) {
           </Link>
           <div className="relative">
             <Link to ='/Cart'>
-              <i className="fa-solid fa-cart-shopping text-lg hover:text-red-500"></i>
+              <i className="fa-solid fa-cart-shopping text-lg hover:text-red-500 "></i>
             </Link>
-            <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs rounded-full w-4 h-4 flex items-center justify-center">
+            <span className="absolute -top-2 -right-0 bg-red-500 text-white text-xs rounded-full w-4 h-4 flex items-center justify-center">
               {cartCount}
             </span>
           </div>
