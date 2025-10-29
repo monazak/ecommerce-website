@@ -57,5 +57,12 @@ export const sections = [
     showArrows: false,
     horizontal: false,
     array: [1,2,3]
+  },{
+    id:'relatedItem',
+    label:'Related Item',
+     showTimer: false,
+    showArrows: false,
+    horizontal: true,
+    array:[1,2,3,4,5,6,7,8,9]
   }
 ];

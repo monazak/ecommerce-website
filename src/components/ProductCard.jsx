@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useCart } from "../context/CartContext";
+import { Link } from "react-router-dom";
 
 function ProductCard({
   id,
@@ -17,11 +18,11 @@ function ProductCard({
   category,
 
 }) {
-  const rate = rating?.rate || 0;
-  const count = rating?.count || 0;
+  const rate = rating?.rate || rating;
+  const count = rating?.count || reviews;
   const [expanded, setExpanded] = useState(false);
   const { addToCart } = useCart();
-  console.log(category)
+
 
   const renderStars = (rate) => {
   const rating = Number(rate) || 0; // Ensure it's always a number
@@ -46,7 +47,8 @@ function ProductCard({
 
 
   return (
-    <div className="product-card w-72 md:w-80 border  bg-white shadow-lg rounded overflow-hidden relative group">
+    <div className="product-card w-72 md:w-80 border  bg-white shadow-lg rounded overflow-hidden relative group hover:bg-gray-100 cursor-pointer" >
+      <Link to={`/productDetailes/${id} ` } > 
       <div className="bg-gray-100 flex justify-center items-center relative w-full h-80">
         {saleRatio && (
           <div className="absolute top-2 left-2 bg-red-500 text-white text-xs px-2 py-1 rounded z-10">
@@ -91,7 +93,8 @@ function ProductCard({
         </div>
       </div>
 
-      <div className="p-3 flex flex-col gap-1 h-24">
+
+       <div className="p-3 flex flex-col gap-1 h-24">
         <div className="w-full pr-4 cursor-pointer" onClick={() => setExpanded(!expanded)}>
           <h3 className={`text-sm font-medium ${!expanded ? "truncate" : ''}`}>{title}</h3>
         </div>
@@ -138,6 +141,8 @@ function ProductCard({
         }
 
       </div>
+
+    </Link>
     </div>
   );
 }

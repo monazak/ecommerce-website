@@ -1,22 +1,63 @@
-import React from "react";
+import {useState, useEffect} from "react";
 import ItemsContainer from "../components/ItemsContainer";
 import SectionName from "../components/SectionName";
-import { products } from "../components/data/products.json";
-
 import ProductCard from "../components/ProductCard";
+import { useParams } from "react-router-dom";
+import { fetchProducts } from "../api/fakeStoreAPI";
+import Section from "../components/Section";
+import { sections } from "../components/data/sections.js";
+import { useCart } from "../context/CartContext";
 
 function ProductDetailes() {
+   const { cart } = useCart();
+   console.log(cart)
+   const {id} = useParams();
+ 
+   const [product, setProduct] = useState(null);
+   const [loading, setLoading] = useState(true);
+ 
+   const generateImageVariants = (src) => {
+          return [
+            { src, rotation: 0 },
+            { src, rotation: 10 },
+            { src, rotation: -10 },
+            { src, rotation: 5 },
+          ];
+    }
+     useEffect(() => {
+     const getProduct = async () => {
+       try {
+         const all = await fetchProducts();
+         const foundProduct = all.find((p) => p.id === Number(id)); 
+         setProduct(foundProduct);
+       } catch (error) {
+         console.error("Error fetching product:", error);
+       } finally {
+         setLoading(false);
+       }
+     };
+ 
+     getProduct(id);
+   }, [id]);
+ 
+
+  if (loading) return <p className="text-center py-10">Loading products...</p>;
+  if (!product) return <p className="p-10 text-red-500">Product not found.</p>;
+
+  console.log(product )
+
   return (
-    <div className="product-detailes-page-container flex flex-col gap-10 px-4 py-10 md:px-[4%] lg:px-[9%] min-h-screen ">
+    <>
+        <div className="product-detailes-page-container flex flex-col gap-10 px-4 py-10 md:px-[4%] lg:px-[9%] min-h-screen ">
       {/* Breadcrumb */}
       <ul className=" mt-10 flex flex-wrap items-center gap-1 text-sm text-gray-500 mb-10">
         <li>
           <a href="#" className="hover:text-red-500 transition">Account</a> /
         </li>
         <li>
-          <a href="#" className="hover:text-red-500 transition">Gaming</a> /
+          <a href="#" className="hover:text-red-500 transition">{product.category}</a> /
         </li>
-        <li className="text-gray-900 font-medium">Havic HV G-92 Gamepad</li>
+        <li className="text-gray-900 font-medium">{product.title}</li>
       </ul>
 
 
@@ -24,12 +65,15 @@ function ProductDetailes() {
       <div className=" flex flex-col lg:flex-row gap-10 lg:items-stretch ">
 
         <div className="flex lg:flex-col justify-between order-2 lg:order-1  ">
-          {["/HV-G-92/HV-2.png", "/HV-G-92/HV-3.png", "/HV-G-92/HV-4.png", "/HV-G-92/HV-5.png"].map((src, i) => (
+
+
+
+          {generateImageVariants(product.image).map((img, i) => (
             <div
               key={i}
               className="w-20 h-20 md:w-32 md:h-32 border rounded-lg overflow-hidden  bg-gray-50 hover:shadow transition"
             >
-              <img src={src} alt={`HV-G-92-${i}`} className="w-full h-full object-contain" />
+              <img src={img.src} alt={`${product.title}-${i}`} className="w-full h-full object-contain"   style={{ transform: `rotate(${img.rotation}deg)` }}/>
             </div>
           ))}
         </div>
@@ -37,7 +81,7 @@ function ProductDetailes() {
         {/* Main Image */}
         <div className="flex-1 flex justify-center items-center rounded-lg shadow-sm order-1 lg:order-2  bg-gray-50">
           <img
-            src="/HV-G-92/HV-1.png"
+            src={`${product.image}`}
             alt="Havic HV G-92 Gamepad"
             className="w-[80%] max-w-md object-contain"
           />
@@ -46,20 +90,19 @@ function ProductDetailes() {
         {/* Product Info */}
         <div className="flex-1 flex flex-col gap-4 order-3">
           <h2 className="text-2xl font-semibold text-gray-900">
-            Havic HV G-92 Gamepad
+            {product.title}
           </h2>
 
           <div className="flex items-center gap-2 text-sm text-gray-500">
-            <div className="flex text-yellow-400">★★★★★</div>
-            <p>(150 Reviews)</p>
+            <div className="flex text-yellow-400">{product.rating?.rate}</div>
+            <p>{product.rating?.count}</p>
             <p className="text-green-600 font-medium">In Stock</p>
           </div>
 
-          <p className="text-2xl font-semibold ">$192.00</p>
+          <p className="text-2xl font-semibold ">${product.price}</p>
 
           <p className="text-gray-600 leading-relaxed">
-            PlayStation 5 Controller Skin High quality vinyl with air channel
-            adhesive for easy bubble-free install and mess-free removal.
+            {product.description || ' PlayStation 5 Controller Skin High quality vinyl with air channeladhesive for easy bubble-free install and mess-free removal.' }
           </p>
 
           <hr className="my-3" />
@@ -135,13 +178,10 @@ function ProductDetailes() {
         </div>
       </div>
 
-      {/* Related Items */}
-      <div className="mt-24 flex flex-col gap-16">
-        <SectionName name="Related Items"  />
-        <ItemsContainer items={products} CardComponent={ProductCard} />
-      </div>
-
     </div>
+      <Section section={sections[5]} />
+    </>
+
   );
 }
 
